@@ -1,0 +1,23 @@
+build/
+.DS_Store
+*.xcuserstate
+xcuserdata/
+
+# Local research, screenshots and device diagnostics
+.lazyweb/
+artifacts/
+*.ips
+*.log
+
+# Signing credentials and local configuration
+*.mobileprovision
+*.p12
+*.p8
+*.key
+.env
+.env.*
+!.env.example
+docs/*test-attachments/
+docs/*.json
+!docs/station-logo-sources.json
+docs/*probes.txt

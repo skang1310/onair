@@ -1,0 +1,2213 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0330FABEA885D3389F41DB87 /* PlaybackIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE13A5B235C9A35DB5457A83 /* PlaybackIntents.swift */; };
+		03F346573C22165088889556 /* RadioQuickSlots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784E2DD10AD9EA2B15BAFCC6 /* RadioQuickSlots.swift */; };
+		04069F243CE19409E17A4A2A /* GameAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 455EDD12D54EAD38B1F15817 /* GameAssets.xcassets */; };
+		0460245CFEFDD5F03C3AEF00 /* RemovedRadioFeatureCleanup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43AA75FE726CBCE4980D4BA /* RemovedRadioFeatureCleanup.swift */; };
+		05D2A650D5E7DFF0C3A3307E /* RadioPresets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB67B042D3C6F505785F7347 /* RadioPresets.swift */; };
+		05F5A75650AC8062F9450191 /* ConnectionHealth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685DC22A09724098264B92C7 /* ConnectionHealth.swift */; };
+		07605C64C2A0AAC944D4D2FE /* RadioWidgetPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A841790C71B958B91D96D585 /* RadioWidgetPresentation.swift */; };
+		07D3574399D6A75B73AA76EB /* ConnectionHealth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685DC22A09724098264B92C7 /* ConnectionHealth.swift */; };
+		0A3A5DA9386E1280558BF635 /* BoardMaterials.swift in Sources */ = {isa = PBXBuildFile; fileRef = A946DFBF599EF05B2A5137D2 /* BoardMaterials.swift */; };
+		0A4D6C477632CAD6287F38AB /* RadioShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4A3CA3F0C681C074D0D7E4 /* RadioShortcuts.swift */; };
+		0AADA6183BB025DB99330328 /* OnAirApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1C808EEEE9EE51C70FC17F /* OnAirApp.swift */; };
+		0BE7B1FF9AE73AC002F38496 /* RadioQuickSlots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784E2DD10AD9EA2B15BAFCC6 /* RadioQuickSlots.swift */; };
+		0EAC318748CDBD101C4770CA /* RadioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC40CD2F010395DCC226E29 /* RadioPlayer.swift */; };
+		0EEA1BD223E02B5520FD8B58 /* DeviceSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62D30F7498094E21594EA6 /* DeviceSync.swift */; };
+		0FA0F9B4B84672D7E9195C0C /* RadioControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F5075C69BB53110AF4E43D /* RadioControls.swift */; };
+		1228669FA552C24E8BEBDD2E /* ChessCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278220C4A1E3FE7415293C89 /* ChessCapture.swift */; };
+		13B1C616D9E50180DA478FA1 /* GomokuGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630BB060403B80E508126490 /* GomokuGame.swift */; };
+		13ECE1D29F9900FCB077700B /* GameAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 455EDD12D54EAD38B1F15817 /* GameAssets.xcassets */; };
+		15A29A7252A6F42A1A0D1705 /* RadioActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73D228A97070100E84DB7F9 /* RadioActivity.swift */; };
+		16B514954A62E655D7DB115F /* ProgramSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE277704D4136590900E3555 /* ProgramSchedule.swift */; };
+		16D49B560C0C32DBC6E90DE0 /* PinchZoomCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52F8E3990A475BBFC896893 /* PinchZoomCanvas.swift */; };
+		1AF66F23FDC1ADA9A6B48FAB /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53CA49ACF1BEACBD8ABBF63 /* Station.swift */; };
+		1B6CA5416C135FFF6332C6A0 /* RadioShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4A3CA3F0C681C074D0D7E4 /* RadioShortcuts.swift */; };
+		1CF5E13BD21D913C2B8CBFDA /* RadioStudioScreens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6064A22981F4DABA0116E89A /* RadioStudioScreens.swift */; };
+		1D36F1EE00D09735949D19DA /* RadioPanelPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85E34548C29EF26D7B7D2C /* RadioPanelPresentation.swift */; };
+		1E8989C194BE6715818001DB /* RadioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC40CD2F010395DCC226E29 /* RadioPlayer.swift */; };
+		1F67E156DA8AD070BF4C2113 /* RadioActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73D228A97070100E84DB7F9 /* RadioActivity.swift */; };
+		1FC7EBEBA674DD8EDCF891AC /* RadioPanelPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85E34548C29EF26D7B7D2C /* RadioPanelPresentation.swift */; };
+		210424437DA4210B72BF3ED0 /* OpponentSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25241FD64A38D0C59FF41F49 /* OpponentSettings.swift */; };
+		22922251585C17AE923FB7BD /* PinchZoomCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52F8E3990A475BBFC896893 /* PinchZoomCanvas.swift */; };
+		22E90BB364039320CEF6B78E /* BoardQuickMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A7CB678CCF8AD9162C5D4B /* BoardQuickMenu.swift */; };
+		242037E17551C0DC713BF4EF /* StreamResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43460833947F79777312B4F2 /* StreamResolver.swift */; };
+		24F02FF2FBF0FABF8B827AFB /* ChessArena.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50F1C946A5DC46F9F891B51 /* ChessArena.swift */; };
+		252AF0F9D3A3BBB275767B27 /* StudioRedesignFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC2A69DB68B26917C068E45 /* StudioRedesignFlowTests.swift */; };
+		25471B457F81DBDE444FA4AF /* ChannelSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2850A4FA13641A033372F07 /* ChannelSchedule.swift */; };
+		269E3B3B24CEDC74DCFFC0FE /* CatalogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD69388B3F8B128010B92CD /* CatalogTests.swift */; };
+		26B2543578202B968528398A /* ConnectionHealth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685DC22A09724098264B92C7 /* ConnectionHealth.swift */; };
+		2771514AC760DD183376F9D2 /* RadioControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F5075C69BB53110AF4E43D /* RadioControls.swift */; };
+		284C38A400023E9350A3EE20 /* WeatherWidgetPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AF079993EAA7C54C81A5FA /* WeatherWidgetPresentation.swift */; };
+		2880353D376ABE1BF80BFEB1 /* stations.json in Resources */ = {isa = PBXBuildFile; fileRef = C6CE939EF15B61F473AB72CE /* stations.json */; };
+		294F30DD7565C544D641B34B /* RadioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC40CD2F010395DCC226E29 /* RadioPlayer.swift */; };
+		2A538617A0FC200E1A195AB2 /* CBSShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1B234A3653D6272D1B579B /* CBSShortcuts.swift */; };
+		2B344A1006C79F5AAC9C4A55 /* OnAirWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = AFCBFB95BBD9D2004F738603 /* OnAirWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2B4EDB23476B13FD379EC1A1 /* OnAirWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F75FB1A68D1C07DE62067636 /* OnAirWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2B5BAED2A93C4E2D0F03F5BE /* RadioWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A886179D1E1D70A7CAE14041 /* RadioWidgets.swift */; };
+		2BF57CA4DF0C4977233ED10D /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05484E1009E1834562592D54 /* Design.swift */; };
+		2D0E9BD98AB684E459A2002E /* RadioPresets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB67B042D3C6F505785F7347 /* RadioPresets.swift */; };
+		2F179E5EA9E64ECA541F08EC /* GameThemes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183AF67A62C26E2F007CFBD2 /* GameThemes.swift */; };
+		2FB2D8D5D3750BD2FA65F50D /* ChessArena.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50F1C946A5DC46F9F891B51 /* ChessArena.swift */; };
+		301B890A56AC7DFFBB1EFB19 /* RadioStudioScreens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6064A22981F4DABA0116E89A /* RadioStudioScreens.swift */; };
+		3044FBC4A33E28307876C9C4 /* RadioHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623B62918D0C2BA4EA2C4E1B /* RadioHome.swift */; };
+		316EBEC789A04FC978809A6D /* RadioWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CE0FE7AE433C10EA8E7657 /* RadioWeatherView.swift */; };
+		326EC9D21FCD75A788C0CAE7 /* stations.json in Resources */ = {isa = PBXBuildFile; fileRef = C6CE939EF15B61F473AB72CE /* stations.json */; };
+		33114E32A76EDBD9B27150CD /* RadioControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F5075C69BB53110AF4E43D /* RadioControls.swift */; };
+		33A2021562110C670A3ABBB5 /* DeviceSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62D30F7498094E21594EA6 /* DeviceSync.swift */; };
+		33E403612FE1D7B4A507F651 /* stations.json in Resources */ = {isa = PBXBuildFile; fileRef = C6CE939EF15B61F473AB72CE /* stations.json */; };
+		3406AE24B951DFE9AE5347B0 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642299D1BF10F3E53A052BBB /* DesignSystem.swift */; };
+		3443D397DD119D418E7053FD /* RemovedRadioFeatureCleanup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43AA75FE726CBCE4980D4BA /* RemovedRadioFeatureCleanup.swift */; };
+		35460F1C4C746CEA1C5B18F4 /* RadioWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84532396D83DC8D1033E127 /* RadioWeather.swift */; };
+		354A56ED918B60115F5915D3 /* WakeRadio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3853D250E049ECC374D85 /* WakeRadio.swift */; };
+		36934781546E05E31554D33D /* SudokuGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06955840A8B11CC5A3B3BC88 /* SudokuGame.swift */; };
+		370A3ED095728B478B9CB08F /* RadioPresets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB67B042D3C6F505785F7347 /* RadioPresets.swift */; };
+		3876197581776BF3B6ABCBC8 /* ProgramSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE277704D4136590900E3555 /* ProgramSchedule.swift */; };
+		38DB7D6068E9F941A0DF7C53 /* StreamResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43460833947F79777312B4F2 /* StreamResolver.swift */; };
+		39A74276A35ACBD62A657374 /* PlaybackIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE13A5B235C9A35DB5457A83 /* PlaybackIntents.swift */; };
+		3BC93EBF46C2F70CFC925D1B /* HapticGlassTuner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE494EFC76A04AB02CBF24A0 /* HapticGlassTuner.swift */; };
+		3E43C0B60E16EF603CF5ADB6 /* RecentListening.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD30867C764C9204F11D0E3 /* RecentListening.swift */; };
+		41FF42B3AC93F2A05B692C92 /* RadioWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84532396D83DC8D1033E127 /* RadioWeather.swift */; };
+		435A2BD4E516FEEB976E7E87 /* StreamResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43460833947F79777312B4F2 /* StreamResolver.swift */; };
+		43E255AC37E850547762EB30 /* FavoriteReorderDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9964BB53231D56398C2120AB /* FavoriteReorderDrop.swift */; };
+		452D92E8240F6518DF910EC2 /* RadioPanelPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85E34548C29EF26D7B7D2C /* RadioPanelPresentation.swift */; };
+		45749366531ECE06BC95FDA6 /* RadioFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BE27A69205806E9D234545 /* RadioFlowTests.swift */; };
+		4686401AE117063B4D8AB826 /* ChessGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7EB3E5F40CBFFE11511570 /* ChessGame.swift */; };
+		48B2280893BCF04A2D074584 /* ChessHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EF8F4C282011331E11BCB5 /* ChessHistory.swift */; };
+		4A02437AA866CE8774CEAA3E /* GameThemes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183AF67A62C26E2F007CFBD2 /* GameThemes.swift */; };
+		4A50248C93911C2EB166CDBB /* ChessGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7EB3E5F40CBFFE11511570 /* ChessGame.swift */; };
+		4BA95301A4ACF6EEAD59D59F /* OnAirWatchWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 4C8E0C10D924BA78E6839BD0 /* OnAirWatchWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4D6FCB051BC2B426EC08019C /* PlaybackIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE13A5B235C9A35DB5457A83 /* PlaybackIntents.swift */; };
+		4DAF679C7E31E94EB30FEBD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5534BAB0A520B881B4D63290 /* Assets.xcassets */; };
+		4F7AE7B0246F1EA509766A97 /* RadioWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A886179D1E1D70A7CAE14041 /* RadioWidgets.swift */; };
+		4FAC022146EAE7FA60D039BD /* GameThemes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183AF67A62C26E2F007CFBD2 /* GameThemes.swift */; };
+		52D7204BE44734FD29F19DC8 /* WeatherWidgetPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AF079993EAA7C54C81A5FA /* WeatherWidgetPresentation.swift */; };
+		53331A98235456B349DB0CAB /* GomokuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119A155F666FCF498788AB34 /* GomokuView.swift */; };
+		53B7FE1B2BA0B3C2D292ECB6 /* PlaybackIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE13A5B235C9A35DB5457A83 /* PlaybackIntents.swift */; };
+		5406EC11AE14C9EEAEC11C10 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642299D1BF10F3E53A052BBB /* DesignSystem.swift */; };
+		56F43366C151E5EA6102EB32 /* OpponentSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25241FD64A38D0C59FF41F49 /* OpponentSettings.swift */; };
+		5731837601615F3D4435C134 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05484E1009E1834562592D54 /* Design.swift */; };
+		5897ED6DAF841D614A2C2EE9 /* StreamResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43460833947F79777312B4F2 /* StreamResolver.swift */; };
+		5953F9FEC2FDD45FC4A524B2 /* GameThemes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183AF67A62C26E2F007CFBD2 /* GameThemes.swift */; };
+		59C5B0244795DDE87B51E513 /* RadioPresets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB67B042D3C6F505785F7347 /* RadioPresets.swift */; };
+		59F36DBF04A0A4F4ED9D1A62 /* FavoriteReorderDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9964BB53231D56398C2120AB /* FavoriteReorderDrop.swift */; };
+		5A8D3D169E68605721B962F5 /* SudokuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E2D897AF2BDC05B155AEF /* SudokuView.swift */; };
+		5D3A2E5E4CD3B6B13C602F46 /* ChessHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EF8F4C282011331E11BCB5 /* ChessHistory.swift */; };
+		5D7DE8991EB8AC5BD3B57DEC /* RadioShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4A3CA3F0C681C074D0D7E4 /* RadioShortcuts.swift */; };
+		5D80A1F9918CA108C75003C1 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05484E1009E1834562592D54 /* Design.swift */; };
+		5DB2794ED2F44A431CFA1EF3 /* SavedGameValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FE0CB91980B6FE3575DEA8 /* SavedGameValidation.swift */; };
+		5E11FA98712DF19C63D00150 /* BoardMaterials.swift in Sources */ = {isa = PBXBuildFile; fileRef = A946DFBF599EF05B2A5137D2 /* BoardMaterials.swift */; };
+		5E893635F905739248ECA79D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5534BAB0A520B881B4D63290 /* Assets.xcassets */; };
+		5EA4AB10F4E9B5F1CD23C2F9 /* SudokuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E2D897AF2BDC05B155AEF /* SudokuView.swift */; };
+		60042A0D0735AA168C18A739 /* PinchZoomCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52F8E3990A475BBFC896893 /* PinchZoomCanvas.swift */; };
+		605EF3934EC8454C1B4D492A /* RadioWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84532396D83DC8D1033E127 /* RadioWeather.swift */; };
+		60645F7FBB758AF594699800 /* ProgramSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE277704D4136590900E3555 /* ProgramSchedule.swift */; };
+		629D3633E8FF55B513BFA354 /* ChessArena.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50F1C946A5DC46F9F891B51 /* ChessArena.swift */; };
+		63F34D5F81609234CF53A268 /* RecentListening.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD30867C764C9204F11D0E3 /* RecentListening.swift */; };
+		640E4911FA4BF9C65C9F88BE /* RadioWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84532396D83DC8D1033E127 /* RadioWeather.swift */; };
+		64B2A678CEE5ED050FFB90A6 /* ChessHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01711CB8C37A6D204D387655 /* ChessHistoryView.swift */; };
+		64CA6AA6F40451D23CB4CA33 /* RadioFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2100918A7E0D05E11779E8 /* RadioFeatures.swift */; };
+		65DB1503E82C1848D0C44B7A /* GomokuBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE19DF5B63427C6C397360C /* GomokuBoard.swift */; };
+		6640E4B5E8A7B6A095D18B2A /* GomokuHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C236F81CF760F15AB2D3D55 /* GomokuHistory.swift */; };
+		6665950646EC7BEDAC24E9F4 /* ChessHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EF8F4C282011331E11BCB5 /* ChessHistory.swift */; };
+		67BD3558215793C2FA5B5FCF /* OnAirApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1C808EEEE9EE51C70FC17F /* OnAirApp.swift */; };
+		67F8D11AA2205E7CF0B23AC0 /* FavoriteReorderDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9964BB53231D56398C2120AB /* FavoriteReorderDrop.swift */; };
+		680DFE9ECE2ABBCA847DC399 /* DeviceSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62D30F7498094E21594EA6 /* DeviceSync.swift */; };
+		68B245FCCCA3C2306B4420D1 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53CA49ACF1BEACBD8ABBF63 /* Station.swift */; };
+		698AF323B92D79820F839056 /* ComputerOpponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B11ADD2204078DDFC4DD4 /* ComputerOpponent.swift */; };
+		6A5AE6E2E6270B1499C7ACD5 /* RadioWidgetPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A841790C71B958B91D96D585 /* RadioWidgetPresentation.swift */; };
+		6B2B2530E2CB81DE252682E6 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53CA49ACF1BEACBD8ABBF63 /* Station.swift */; };
+		6B310DF95E5D4B354B876F5C /* RadioWidgetPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A841790C71B958B91D96D585 /* RadioWidgetPresentation.swift */; };
+		6E1A7258CF395B55959F5E3E /* ConnectionHealth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685DC22A09724098264B92C7 /* ConnectionHealth.swift */; };
+		6EC33A5EF99270CABD463176 /* StreamResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43460833947F79777312B4F2 /* StreamResolver.swift */; };
+		6EDB7BACBE4BF41AFAB80A38 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642299D1BF10F3E53A052BBB /* DesignSystem.swift */; };
+		6F03B429EA2AAF0FDBB79F24 /* OnAirWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AABFDA83A8086688E1A45D /* OnAirWatch.swift */; };
+		6F28102FB0668E0099E384C7 /* BoardMaterials.swift in Sources */ = {isa = PBXBuildFile; fileRef = A946DFBF599EF05B2A5137D2 /* BoardMaterials.swift */; };
+		71DFBBD7D16C9FE33A1B486C /* ProgramSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE277704D4136590900E3555 /* ProgramSchedule.swift */; };
+		727D182E7B862A8FD5746758 /* RemovedRadioFeatureCleanup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43AA75FE726CBCE4980D4BA /* RemovedRadioFeatureCleanup.swift */; };
+		734F5869B5A8B3B49A988BD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5534BAB0A520B881B4D63290 /* Assets.xcassets */; };
+		73C4A864E217618F394BE081 /* RadioPanelPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85E34548C29EF26D7B7D2C /* RadioPanelPresentation.swift */; };
+		73EE33ADD56D006390448FFA /* SavedGameValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FE0CB91980B6FE3575DEA8 /* SavedGameValidation.swift */; };
+		745F1B86095AA9E5B259F6D5 /* StreamResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43460833947F79777312B4F2 /* StreamResolver.swift */; };
+		75296C85D40BAEC5516FC256 /* RadioPresets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB67B042D3C6F505785F7347 /* RadioPresets.swift */; };
+		75A74A3B5429821DA955D90E /* LiquidRadioDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F2033EF62C145AFCB273E2 /* LiquidRadioDesign.swift */; };
+		761A7F1272279440960BD4F7 /* RadioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC40CD2F010395DCC226E29 /* RadioPlayer.swift */; };
+		76FF232DF11B8FD101D1C815 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642299D1BF10F3E53A052BBB /* DesignSystem.swift */; };
+		79EE19FC7396C0EB2B05DEB1 /* RadioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC40CD2F010395DCC226E29 /* RadioPlayer.swift */; };
+		79F0F69A8B533ED993F8C2EF /* RadioDiscoveryHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23236AA932AEAB64B3FA6F64 /* RadioDiscoveryHero.swift */; };
+		79F115369E6754F324FFA1CA /* RadioQuickSlots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784E2DD10AD9EA2B15BAFCC6 /* RadioQuickSlots.swift */; };
+		7A22AC7AA90AF25B5243C8D1 /* RadioDiscoveryHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23236AA932AEAB64B3FA6F64 /* RadioDiscoveryHero.swift */; };
+		7A4436D78E1B0202F60555A5 /* GomokuHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C236F81CF760F15AB2D3D55 /* GomokuHistory.swift */; };
+		7AEC9D70EC541A48E53324B1 /* RadioExperienceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4435861E022F6CA620E0F88 /* RadioExperienceTests.swift */; };
+		7B21EC1826E953A78A4C9FC6 /* RadioDiscoveryHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23236AA932AEAB64B3FA6F64 /* RadioDiscoveryHero.swift */; };
+		7BC1882026689ADB130FE61C /* stations.json in Resources */ = {isa = PBXBuildFile; fileRef = C6CE939EF15B61F473AB72CE /* stations.json */; };
+		7C29C5F96425C138976F68F6 /* RadioExtras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADE278EA15A48AE0BD7B1F9 /* RadioExtras.swift */; };
+		7E6B5FA1A7CEDE7B442D5B7D /* PlaybackIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE13A5B235C9A35DB5457A83 /* PlaybackIntents.swift */; };
+		7E7CC3C8A0E567A2D459E7C7 /* ChessHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01711CB8C37A6D204D387655 /* ChessHistoryView.swift */; };
+		7EA926B339C257AD1FA0BE16 /* ProgramSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE277704D4136590900E3555 /* ProgramSchedule.swift */; };
+		7F3A0D17B5413C40C2935640 /* WeatherWidgetPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AF079993EAA7C54C81A5FA /* WeatherWidgetPresentation.swift */; };
+		7F42B864A96D1C7E997AB703 /* HapticGlassTuner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE494EFC76A04AB02CBF24A0 /* HapticGlassTuner.swift */; };
+		7F7A78AF8840546DB4FBCDC9 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53CA49ACF1BEACBD8ABBF63 /* Station.swift */; };
+		807DAC46FD6842D0E682B40F /* ChessGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7EB3E5F40CBFFE11511570 /* ChessGame.swift */; };
+		808003509A3F3325623E9308 /* ChessHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01711CB8C37A6D204D387655 /* ChessHistoryView.swift */; };
+		80CDD2F374481346D02C889B /* RadioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC40CD2F010395DCC226E29 /* RadioPlayer.swift */; };
+		82CE3A2C1F54AE4D2A1E08B3 /* RadioDiscoveryHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23236AA932AEAB64B3FA6F64 /* RadioDiscoveryHero.swift */; };
+		82F3077ED85B547E1AC02E4E /* DeviceSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62D30F7498094E21594EA6 /* DeviceSync.swift */; };
+		8386A0DF50C42D73AC25A62E /* OnAirApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1C808EEEE9EE51C70FC17F /* OnAirApp.swift */; };
+		84DEB974D3430D9008D9FA98 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05484E1009E1834562592D54 /* Design.swift */; };
+		85693F2ADDBD4B548889CCC5 /* ConnectionHealth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685DC22A09724098264B92C7 /* ConnectionHealth.swift */; };
+		85FB571A4B45F9915BD5BED3 /* BoardQuickMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A7CB678CCF8AD9162C5D4B /* BoardQuickMenu.swift */; };
+		86B72BC8891C44CCC5169B89 /* ChannelSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2850A4FA13641A033372F07 /* ChannelSchedule.swift */; };
+		88547244DBDA413C70D5EAA4 /* OpponentSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25241FD64A38D0C59FF41F49 /* OpponentSettings.swift */; };
+		889E3DFDE75A19BA612AB203 /* RadioActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73D228A97070100E84DB7F9 /* RadioActivity.swift */; };
+		88AE21EE940AC3696DCB6D32 /* RecentListening.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD30867C764C9204F11D0E3 /* RecentListening.swift */; };
+		88FFA1FC1FC6FA2E39BD6FFA /* DeviceSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62D30F7498094E21594EA6 /* DeviceSync.swift */; };
+		897E86E0C831CD03C671A026 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53CA49ACF1BEACBD8ABBF63 /* Station.swift */; };
+		89CE21C39F7A2D68B35E6494 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5534BAB0A520B881B4D63290 /* Assets.xcassets */; };
+		89E27543F37A4F9FC02090C4 /* RadioPresets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB67B042D3C6F505785F7347 /* RadioPresets.swift */; };
+		8B1FEBD91F26275AAC80906A /* RadioWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CE0FE7AE433C10EA8E7657 /* RadioWeatherView.swift */; };
+		8CCF5467C2162395EE3F542B /* WeatherDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D237B5C2F84D82E140767A /* WeatherDetailView.swift */; };
+		8D0E3D6308CB2BE9DF0C91EC /* stations.json in Resources */ = {isa = PBXBuildFile; fileRef = C6CE939EF15B61F473AB72CE /* stations.json */; };
+		8F044E1951ADF708D3E9EB76 /* WeatherDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D237B5C2F84D82E140767A /* WeatherDetailView.swift */; };
+		90BC80301D43640AD1949316 /* GomokuHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C236F81CF760F15AB2D3D55 /* GomokuHistory.swift */; };
+		91589BB843EAD7EC7FBA0D63 /* CBSShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1B234A3653D6272D1B579B /* CBSShortcuts.swift */; };
+		933F9AC89A03FF6350D5D37B /* CBSShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1B234A3653D6272D1B579B /* CBSShortcuts.swift */; };
+		93A6EC080EB0F62E0677E3F6 /* ChessCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278220C4A1E3FE7415293C89 /* ChessCapture.swift */; };
+		94E172827DD30AF7A6D87D26 /* RadioQuickSlots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784E2DD10AD9EA2B15BAFCC6 /* RadioQuickSlots.swift */; };
+		95073E0E31800D2CBCCF6BF3 /* ProgramSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE277704D4136590900E3555 /* ProgramSchedule.swift */; };
+		95537A58C3C8C501C920126A /* ConnectionHealth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685DC22A09724098264B92C7 /* ConnectionHealth.swift */; };
+		96D58D60309AF87EAEC87388 /* RadioActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73D228A97070100E84DB7F9 /* RadioActivity.swift */; };
+		974E068BD0C4F4A5072868AD /* GomokuHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C236F81CF760F15AB2D3D55 /* GomokuHistory.swift */; };
+		97D416529D84529405237AA5 /* ChessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ED0C96EC18B5C5D3E4D4AB /* ChessView.swift */; };
+		97DEA57466B9F715CB26A62F /* RadioExtras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADE278EA15A48AE0BD7B1F9 /* RadioExtras.swift */; };
+		9833DBFF2B9DC2F46CAED720 /* LiquidRadioDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F2033EF62C145AFCB273E2 /* LiquidRadioDesign.swift */; };
+		98E4AF36CFDC50917577C9EF /* BoardQuickMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A7CB678CCF8AD9162C5D4B /* BoardQuickMenu.swift */; };
+		9996415287A94BAD5B5F2436 /* LiquidRadioFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3449E326F3BB09D704EF4CD7 /* LiquidRadioFlowTests.swift */; };
+		9CFB4A477D70000A7368006E /* WakeRadio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3853D250E049ECC374D85 /* WakeRadio.swift */; };
+		9D3FE2ADD29EC5653B55A5C9 /* OnAirApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1C808EEEE9EE51C70FC17F /* OnAirApp.swift */; };
+		9D61570F7C948A45538371B9 /* SudokuGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06955840A8B11CC5A3B3BC88 /* SudokuGame.swift */; };
+		9D787E1CC6C2D4E005B9E7B8 /* RadioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC40CD2F010395DCC226E29 /* RadioPlayer.swift */; };
+		9DDA85E7BBB249930C83D46B /* RadioWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84532396D83DC8D1033E127 /* RadioWeather.swift */; };
+		9E7184D00F0DCE9A353BE41C /* RadioPanelPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85E34548C29EF26D7B7D2C /* RadioPanelPresentation.swift */; };
+		9F255378FA23BC8CBF1D0BB1 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53CA49ACF1BEACBD8ABBF63 /* Station.swift */; };
+		9F4B7EBAC63A7107EA2EC69E /* WakeRadio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3853D250E049ECC374D85 /* WakeRadio.swift */; };
+		9F76F5EF3AD21A2305E8231B /* GomokuGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630BB060403B80E508126490 /* GomokuGame.swift */; };
+		9FB3DC46A61EDC94D8232F48 /* WakeRadio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3853D250E049ECC374D85 /* WakeRadio.swift */; };
+		A03044679712C96CF947A541 /* OnAirWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F75FB1A68D1C07DE62067636 /* OnAirWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A04433C30BC77120115E2374 /* RadioActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73D228A97070100E84DB7F9 /* RadioActivity.swift */; };
+		A17F48DC34F5A741EB85738B /* OnAirWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = AFCBFB95BBD9D2004F738603 /* OnAirWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A6BC34FEFCFBA9C732579159 /* DeviceSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62D30F7498094E21594EA6 /* DeviceSync.swift */; };
+		A7CE7984D4B0151850ACECB6 /* RadioActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73D228A97070100E84DB7F9 /* RadioActivity.swift */; };
+		A7E6F3956B311848CC57A183 /* GomokuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119A155F666FCF498788AB34 /* GomokuView.swift */; };
+		A935661767DF20EF2CD7CD74 /* StreamResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43460833947F79777312B4F2 /* StreamResolver.swift */; };
+		AA7E6C00F10DCFEDC0E50806 /* RadioHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623B62918D0C2BA4EA2C4E1B /* RadioHome.swift */; };
+		AA8E83CFC5581D3D256C98E3 /* RadioQuickSlots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784E2DD10AD9EA2B15BAFCC6 /* RadioQuickSlots.swift */; };
+		AACB060C176EC675E6CDE67C /* ChessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ED0C96EC18B5C5D3E4D4AB /* ChessView.swift */; };
+		AB8A939A3B5499C0F67218E8 /* LiquidRadioDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F2033EF62C145AFCB273E2 /* LiquidRadioDesign.swift */; };
+		AB986E8ADE6DF95CCA5EF6A0 /* RadioControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F5075C69BB53110AF4E43D /* RadioControls.swift */; };
+		AC2CAFA04E96A52F2E0575B5 /* ChannelSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2850A4FA13641A033372F07 /* ChannelSchedule.swift */; };
+		AD295A4C00E8F5EDEEB86D46 /* WakeRadio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3853D250E049ECC374D85 /* WakeRadio.swift */; };
+		ADF638F6BBEF1662CA6ACEC0 /* RadioStudioScreens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6064A22981F4DABA0116E89A /* RadioStudioScreens.swift */; };
+		AE02A006F6A23C3B640BE81D /* GomokuHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31B9F725F7A2877BB718B9D /* GomokuHistoryView.swift */; };
+		AF0A08D2311FA3C8839DB880 /* DeviceSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62D30F7498094E21594EA6 /* DeviceSync.swift */; };
+		B113E0F7E356ADE45EFFE546 /* WeatherWidgetPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AF079993EAA7C54C81A5FA /* WeatherWidgetPresentation.swift */; };
+		B1334EF3536346800D90B3C1 /* WeatherWidgetPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AF079993EAA7C54C81A5FA /* WeatherWidgetPresentation.swift */; };
+		B27DBB60034BF6D301ADC1BB /* RadioFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2100918A7E0D05E11779E8 /* RadioFeatures.swift */; };
+		B47C5DFCE04F05484498E097 /* RadioWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84532396D83DC8D1033E127 /* RadioWeather.swift */; };
+		B57A3D16318B0DEF20B2DE73 /* ConnectionHealth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685DC22A09724098264B92C7 /* ConnectionHealth.swift */; };
+		B5A5CF935B255BF679EB78D1 /* RadioPresets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB67B042D3C6F505785F7347 /* RadioPresets.swift */; };
+		B5C1676DD5AD3092CA8EC730 /* CBSShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1B234A3653D6272D1B579B /* CBSShortcuts.swift */; };
+		B6EACD9E4A9128CA18493199 /* CBSShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1B234A3653D6272D1B579B /* CBSShortcuts.swift */; };
+		B7D638003FEDA33BD6D70CCD /* RadioExtras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADE278EA15A48AE0BD7B1F9 /* RadioExtras.swift */; };
+		B7EF6641F842CD22E4170004 /* RadioWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84532396D83DC8D1033E127 /* RadioWeather.swift */; };
+		BBF04D5994FA3BD9A0425842 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53CA49ACF1BEACBD8ABBF63 /* Station.swift */; };
+		BC844F70EF2ECBEF5CC8F653 /* GomokuBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE19DF5B63427C6C397360C /* GomokuBoard.swift */; };
+		BD4509F8BF7E1502ADAF49C5 /* RadioWidgetPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A841790C71B958B91D96D585 /* RadioWidgetPresentation.swift */; };
+		BD8D47B8F15ADBCA046A7856 /* StreamResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43460833947F79777312B4F2 /* StreamResolver.swift */; };
+		BDAD57ED1481EEC06B60202E /* ChessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ED0C96EC18B5C5D3E4D4AB /* ChessView.swift */; };
+		BE925B605198A520FEB8BD86 /* GomokuHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31B9F725F7A2877BB718B9D /* GomokuHistoryView.swift */; };
+		BEBA24B420FB1B08458F8393 /* OnAirWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F75FB1A68D1C07DE62067636 /* OnAirWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		BF135B8E0F630A9BEAD67EDB /* WakeRadio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3853D250E049ECC374D85 /* WakeRadio.swift */; };
+		BF76690F5AD7778E2B141FC2 /* ChannelSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2850A4FA13641A033372F07 /* ChannelSchedule.swift */; };
+		BF929D1CFE00E9BEB451D6F6 /* WeatherRadioWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7BDED0B7DAEF652E48B6AC /* WeatherRadioWidget.swift */; };
+		C043D2A4B6181AEBF7ADD354 /* RadioControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F5075C69BB53110AF4E43D /* RadioControls.swift */; };
+		C1749C76275C0F280249C47A /* RadioActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73D228A97070100E84DB7F9 /* RadioActivity.swift */; };
+		C17D06A79BFD873AA49372CD /* RadioHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623B62918D0C2BA4EA2C4E1B /* RadioHome.swift */; };
+		C18D78FC0D2DFE24842E5F16 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05484E1009E1834562592D54 /* Design.swift */; };
+		C1F37AF48EB81AB4D185FDF3 /* PinchZoomCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52F8E3990A475BBFC896893 /* PinchZoomCanvas.swift */; };
+		C2200E3398B756D854A3FE6D /* WeatherDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D237B5C2F84D82E140767A /* WeatherDetailView.swift */; };
+		C279A7CF17AEE72C9C1ADA94 /* RecentListening.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD30867C764C9204F11D0E3 /* RecentListening.swift */; };
+		C4446418FD84D235A2A4D72B /* ComputerOpponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B11ADD2204078DDFC4DD4 /* ComputerOpponent.swift */; };
+		C51959E8C64B8018A1CE9E29 /* GomokuHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31B9F725F7A2877BB718B9D /* GomokuHistoryView.swift */; };
+		C5271587F9EDDA5819F446FF /* ImportedRadioGamesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5064B16C686686554FFD8A14 /* ImportedRadioGamesTests.swift */; };
+		C553A8D0CA06926504575099 /* GomokuGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630BB060403B80E508126490 /* GomokuGame.swift */; };
+		C62D9FB19A5D8E084F42B191 /* RadioPresets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB67B042D3C6F505785F7347 /* RadioPresets.swift */; };
+		C639F30E8CDE8C8EE646D90F /* RadioControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F5075C69BB53110AF4E43D /* RadioControls.swift */; };
+		C6CB25EBF8AF3544515F494B /* ChessHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EF8F4C282011331E11BCB5 /* ChessHistory.swift */; };
+		C703A03A715B7751905B76B6 /* RecentListening.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD30867C764C9204F11D0E3 /* RecentListening.swift */; };
+		C7C6E0763C8EDADF4947E444 /* RecentListening.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD30867C764C9204F11D0E3 /* RecentListening.swift */; };
+		C7CD319CD74BE63FB68C943A /* GomokuBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE19DF5B63427C6C397360C /* GomokuBoard.swift */; };
+		C84D4A5C2CE76D3F91842DF9 /* SudokuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E2D897AF2BDC05B155AEF /* SudokuView.swift */; };
+		C8EC3B9F1DCC65D01663CF72 /* ConnectionHealth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685DC22A09724098264B92C7 /* ConnectionHealth.swift */; };
+		CAC9B3AB9F83C84EB6CDA17D /* RadioControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F5075C69BB53110AF4E43D /* RadioControls.swift */; };
+		CAD42DEA6DE03EF83F2E0392 /* RadioWidgetPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A841790C71B958B91D96D585 /* RadioWidgetPresentation.swift */; };
+		CBDC746C79A284C101607765 /* RadioPanelPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85E34548C29EF26D7B7D2C /* RadioPanelPresentation.swift */; };
+		CCDC86F03983A411156B4E09 /* RecentListening.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD30867C764C9204F11D0E3 /* RecentListening.swift */; };
+		CCEFED73EC2CE02465B426D1 /* WeatherWidgetPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AF079993EAA7C54C81A5FA /* WeatherWidgetPresentation.swift */; };
+		CD56838D4B0A1FD7F38F84BC /* ChessArena.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50F1C946A5DC46F9F891B51 /* ChessArena.swift */; };
+		CE4A291E01A8BF757DD42FDA /* GomokuBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE19DF5B63427C6C397360C /* GomokuBoard.swift */; };
+		CF8519CA6E548AF4323E757B /* FavoriteReorderDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9964BB53231D56398C2120AB /* FavoriteReorderDrop.swift */; };
+		D168D7503E695AB2E1322C8A /* RemovedRadioFeatureCleanup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43AA75FE726CBCE4980D4BA /* RemovedRadioFeatureCleanup.swift */; };
+		D196423EA46A3D281513E5FC /* CBSShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1B234A3653D6272D1B579B /* CBSShortcuts.swift */; };
+		D1CC8C6BEBB5D7AAF90E7187 /* LiquidRadioDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F2033EF62C145AFCB273E2 /* LiquidRadioDesign.swift */; };
+		D2DF84A8D6B9697592375E4D /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53CA49ACF1BEACBD8ABBF63 /* Station.swift */; };
+		D2EB661DA8C1F4035201608E /* WeatherDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D237B5C2F84D82E140767A /* WeatherDetailView.swift */; };
+		D397FDF58EB0A95D3BB8088D /* RadioHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623B62918D0C2BA4EA2C4E1B /* RadioHome.swift */; };
+		D4B9AAC6B2DCE43A78895D2E /* GomokuHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31B9F725F7A2877BB718B9D /* GomokuHistoryView.swift */; };
+		D564B37492CBDFAADB36CEC8 /* ChannelSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2850A4FA13641A033372F07 /* ChannelSchedule.swift */; };
+		D5ACFCA8185F38495C99E5BC /* ChannelSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2850A4FA13641A033372F07 /* ChannelSchedule.swift */; };
+		D7598B3D6BC804EAE41F8AAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5534BAB0A520B881B4D63290 /* Assets.xcassets */; };
+		D7A25140AC8F0D5D9AA88F35 /* BoardQuickMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A7CB678CCF8AD9162C5D4B /* BoardQuickMenu.swift */; };
+		D7E10140A5ADA40C10942260 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05484E1009E1834562592D54 /* Design.swift */; };
+		D99E30F1C0D85505249C3CD6 /* ProgramSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE277704D4136590900E3555 /* ProgramSchedule.swift */; };
+		DA62CF21207936899C3AF961 /* PlaybackIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE13A5B235C9A35DB5457A83 /* PlaybackIntents.swift */; };
+		DAD96AC0DE63C856272A127C /* PlaybackIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE13A5B235C9A35DB5457A83 /* PlaybackIntents.swift */; };
+		DBCF9187C87E23A2E93077A4 /* ComputerOpponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B11ADD2204078DDFC4DD4 /* ComputerOpponent.swift */; };
+		DC0984691945B9F77CDFDD33 /* HapticGlassTuner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE494EFC76A04AB02CBF24A0 /* HapticGlassTuner.swift */; };
+		DCCCFC8823724C03DB3C0535 /* ComputerOpponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B11ADD2204078DDFC4DD4 /* ComputerOpponent.swift */; };
+		DCDD14C7FEC3D9EF5F18705A /* ChessCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278220C4A1E3FE7415293C89 /* ChessCapture.swift */; };
+		DD57662FD3B316E42E4B7114 /* RadioQuickSlots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784E2DD10AD9EA2B15BAFCC6 /* RadioQuickSlots.swift */; };
+		DDFC012603C5875701308A8A /* GomokuGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630BB060403B80E508126490 /* GomokuGame.swift */; };
+		DF2AFCDDFBF702B36484A846 /* ChannelSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2850A4FA13641A033372F07 /* ChannelSchedule.swift */; };
+		E0C7B3D4C241E5E3A7E1C643 /* RadioWidgetPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A841790C71B958B91D96D585 /* RadioWidgetPresentation.swift */; };
+		E0D7C8F5D20848AAB73A3759 /* CBSShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1B234A3653D6272D1B579B /* CBSShortcuts.swift */; };
+		E11C1E799D9DCFB625432E4A /* SavedGameValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FE0CB91980B6FE3575DEA8 /* SavedGameValidation.swift */; };
+		E1820605901C72632B2EF695 /* WeatherAndLineupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90EFEC73BC8BADDE5B19797 /* WeatherAndLineupTests.swift */; };
+		E2305964473FE7BEF45F2483 /* SudokuGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06955840A8B11CC5A3B3BC88 /* SudokuGame.swift */; };
+		E310697ACAC75A65B9D4B8FE /* CBSShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1B234A3653D6272D1B579B /* CBSShortcuts.swift */; };
+		E35D1F3E0A6A65E59D4B65DC /* RadioFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2100918A7E0D05E11779E8 /* RadioFeatures.swift */; };
+		E58FA74CD427C18493805038 /* ChessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ED0C96EC18B5C5D3E4D4AB /* ChessView.swift */; };
+		E5B31488989ACF3489771A71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5534BAB0A520B881B4D63290 /* Assets.xcassets */; };
+		E5E714C94DDD15B7F4FABEEC /* ChessGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7EB3E5F40CBFFE11511570 /* ChessGame.swift */; };
+		E636FED43082A526A6C3AEE5 /* RadioStudioScreens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6064A22981F4DABA0116E89A /* RadioStudioScreens.swift */; };
+		E69D47B447421B38C77BB9EE /* RadioPanelPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85E34548C29EF26D7B7D2C /* RadioPanelPresentation.swift */; };
+		E8504E70E6100C66BAA7BBE3 /* GameAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 455EDD12D54EAD38B1F15817 /* GameAssets.xcassets */; };
+		E89B7A703AD9D0CAFB9FBB1B /* RadioShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4A3CA3F0C681C074D0D7E4 /* RadioShortcuts.swift */; };
+		E8B743C4FBA912286241061A /* ChannelSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2850A4FA13641A033372F07 /* ChannelSchedule.swift */; };
+		E9210B3AF79030EBB7E44229 /* OpponentSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25241FD64A38D0C59FF41F49 /* OpponentSettings.swift */; };
+		E9433A8DCE319E177DB2E64E /* GameAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 455EDD12D54EAD38B1F15817 /* GameAssets.xcassets */; };
+		E983EA61641DF1CA25D92FAF /* SudokuGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06955840A8B11CC5A3B3BC88 /* SudokuGame.swift */; };
+		E99DBD35181D29825217135D /* RadioQuickSlots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784E2DD10AD9EA2B15BAFCC6 /* RadioQuickSlots.swift */; };
+		EAE6F3D70AF7991EAC8BF5A9 /* SavedGameValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FE0CB91980B6FE3575DEA8 /* SavedGameValidation.swift */; };
+		EB468AFF5F7E0B2C3EBE2969 /* ChessHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01711CB8C37A6D204D387655 /* ChessHistoryView.swift */; };
+		EBA12C27B1E7D5B4ACDD1873 /* SudokuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E2D897AF2BDC05B155AEF /* SudokuView.swift */; };
+		EBD3606B2A362647D0104020 /* RecentListening.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD30867C764C9204F11D0E3 /* RecentListening.swift */; };
+		EBE90BD8B5126A8D781045FD /* RadioWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CE0FE7AE433C10EA8E7657 /* RadioWeatherView.swift */; };
+		EC59DCCD12E71890F7B32C64 /* WeatherWidgetPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AF079993EAA7C54C81A5FA /* WeatherWidgetPresentation.swift */; };
+		EC8E0F68064AF7A4FBD1DBEE /* RadioWidgetPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A841790C71B958B91D96D585 /* RadioWidgetPresentation.swift */; };
+		ED8EAD411D391F130C0957FC /* GomokuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119A155F666FCF498788AB34 /* GomokuView.swift */; };
+		EF29658DCE7994956DA7D124 /* RadioPanelPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85E34548C29EF26D7B7D2C /* RadioPanelPresentation.swift */; };
+		EF2B1A9283EBAC551263C307 /* ChessCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278220C4A1E3FE7415293C89 /* ChessCapture.swift */; };
+		EFFB1AC1700CD6560E13272C /* BoardMaterials.swift in Sources */ = {isa = PBXBuildFile; fileRef = A946DFBF599EF05B2A5137D2 /* BoardMaterials.swift */; };
+		F02657E6F947DC852FCF0B90 /* WakeRadio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3853D250E049ECC374D85 /* WakeRadio.swift */; };
+		F06168FB5FCDCE141A0ED56A /* RadioControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F5075C69BB53110AF4E43D /* RadioControls.swift */; };
+		F067BFBF097ED787A689889A /* WeatherWidgetPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AF079993EAA7C54C81A5FA /* WeatherWidgetPresentation.swift */; };
+		F07323870A3F36069635E185 /* RadioQuickSlots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784E2DD10AD9EA2B15BAFCC6 /* RadioQuickSlots.swift */; };
+		F11578C4E64952C52649E1AC /* PlaybackIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE13A5B235C9A35DB5457A83 /* PlaybackIntents.swift */; };
+		F15CDFB1B5EF5470F17E4697 /* RadioExtras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADE278EA15A48AE0BD7B1F9 /* RadioExtras.swift */; };
+		F171B57217F6D86CE64A0C0D /* RadioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC40CD2F010395DCC226E29 /* RadioPlayer.swift */; };
+		F273D29F0EDC669E30D2A4B4 /* RadioWidgetPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A841790C71B958B91D96D585 /* RadioWidgetPresentation.swift */; };
+		F31C728366D77DC9041BEFE8 /* GomokuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119A155F666FCF498788AB34 /* GomokuView.swift */; };
+		F4820AA69DA24ECEDDA977A0 /* WeatherRadioFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD29A4C1F0F79A09E500D737 /* WeatherRadioFlowTests.swift */; };
+		F4DA4696A97C0DEEE4DB1937 /* OnAirTV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D641D77CD9D1D0457475DD /* OnAirTV.swift */; };
+		F568064227E70714CCBDEC72 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05484E1009E1834562592D54 /* Design.swift */; };
+		F5824386F5A242F0C7AF612F /* RadioFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2100918A7E0D05E11779E8 /* RadioFeatures.swift */; };
+		F611735855BB9675CEDD31E5 /* FeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF834EFD992AACC77DE03B10 /* FeatureTests.swift */; };
+		F72E5CDC3AE841134D226B3C /* HapticGlassTuner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE494EFC76A04AB02CBF24A0 /* HapticGlassTuner.swift */; };
+		F79D553094DC2C495D5BE9C6 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05484E1009E1834562592D54 /* Design.swift */; };
+		F86D2635AFF9FEB973BDC951 /* RadioActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73D228A97070100E84DB7F9 /* RadioActivity.swift */; };
+		F8C2CF1C3D171D363C430637 /* RadioWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CE0FE7AE433C10EA8E7657 /* RadioWeatherView.swift */; };
+		FA5922F0D8FFE5E10855A588 /* ProgramSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE277704D4136590900E3555 /* ProgramSchedule.swift */; };
+		FA676B63D8238E5EEF11664E /* RadioWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84532396D83DC8D1033E127 /* RadioWeather.swift */; };
+		FA845A28363C5A070044536D /* OnAirWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F75FB1A68D1C07DE62067636 /* OnAirWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FC3B5ACF10C3BE585C6C2257 /* stations.json in Resources */ = {isa = PBXBuildFile; fileRef = C6CE939EF15B61F473AB72CE /* stations.json */; };
+		FD61331364D0835B949A7534 /* WakeRadio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3853D250E049ECC374D85 /* WakeRadio.swift */; };
+		FDFEAD66C17877D8D420FD5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5534BAB0A520B881B4D63290 /* Assets.xcassets */; };
+		FEBC7477DF8F1BAE3093E2C8 /* RadioExtrasFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086522F6DA6D8CDC0465B0E8 /* RadioExtrasFlowTests.swift */; };
+		FF733BAD499FCB45E0F480EC /* DeviceSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62D30F7498094E21594EA6 /* DeviceSync.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		67ABF7922F1A14F19D8ABDDA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC5977AB2C7690558226D4A2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 184F785AACCE6D1F1954EF19;
+			remoteInfo = OnAirWidgets;
+		};
+		7B5FB6FB52B5B4792EA6CCB1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC5977AB2C7690558226D4A2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB92895451C54812613171EA;
+			remoteInfo = OnAir;
+		};
+		830A75B471379B91924B4A0A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC5977AB2C7690558226D4A2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB92895451C54812613171EA;
+			remoteInfo = OnAir;
+		};
+		888EABA292D2FAAC94E86617 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC5977AB2C7690558226D4A2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 184F785AACCE6D1F1954EF19;
+			remoteInfo = OnAirWidgets;
+		};
+		96E6CCA0A996B7B5BE807E71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC5977AB2C7690558226D4A2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4A0C0E8EE3DACB92961DEFBD;
+			remoteInfo = OnAirWatch;
+		};
+		A5558EE6A4C4D3CCAB5C68FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC5977AB2C7690558226D4A2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 184F785AACCE6D1F1954EF19;
+			remoteInfo = OnAirWidgets;
+		};
+		B1EDA5F872815674C3BC464F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC5977AB2C7690558226D4A2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C88E6A6D46C44B9DA3135F2A;
+			remoteInfo = OnAirWatchWidgets;
+		};
+		CA7BCA6FC04D3156280689F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC5977AB2C7690558226D4A2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4A0C0E8EE3DACB92961DEFBD;
+			remoteInfo = OnAirWatch;
+		};
+		E034AD8204600BA9BFE9FFB5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC5977AB2C7690558226D4A2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 184F785AACCE6D1F1954EF19;
+			remoteInfo = OnAirWidgets;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		18ACAF5BD905E07B7FE04DBC /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FA845A28363C5A070044536D /* OnAirWidgets.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		628DA5B85828D10B7B1D22B7 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A03044679712C96CF947A541 /* OnAirWidgets.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81D7C3CD4B45FBBECC047D6D /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				A17F48DC34F5A741EB85738B /* OnAirWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2D4DF23CE6FE6E55624EF9F /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				4BA95301A4ACF6EEAD59D59F /* OnAirWatchWidgets.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BACCF5571A77EC05DCEB3F08 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				2B344A1006C79F5AAC9C4A55 /* OnAirWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5E518E1857814DBD42464AE /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				BEBA24B420FB1B08458F8393 /* OnAirWidgets.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD8779128C467DD9D7CF9394 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2B4EDB23476B13FD379EC1A1 /* OnAirWidgets.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		01711CB8C37A6D204D387655 /* ChessHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessHistoryView.swift; sourceTree = "<group>"; };
+		05484E1009E1834562592D54 /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
+		06955840A8B11CC5A3B3BC88 /* SudokuGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SudokuGame.swift; sourceTree = "<group>"; };
+		086522F6DA6D8CDC0465B0E8 /* RadioExtrasFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioExtrasFlowTests.swift; sourceTree = "<group>"; };
+		0ADE278EA15A48AE0BD7B1F9 /* RadioExtras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioExtras.swift; sourceTree = "<group>"; };
+		119A155F666FCF498788AB34 /* GomokuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GomokuView.swift; sourceTree = "<group>"; };
+		13D641D77CD9D1D0457475DD /* OnAirTV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnAirTV.swift; sourceTree = "<group>"; };
+		183AF67A62C26E2F007CFBD2 /* GameThemes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameThemes.swift; sourceTree = "<group>"; };
+		18B3853D250E049ECC374D85 /* WakeRadio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WakeRadio.swift; sourceTree = "<group>"; };
+		1C236F81CF760F15AB2D3D55 /* GomokuHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GomokuHistory.swift; sourceTree = "<group>"; };
+		1E97C2BC713794F4AF6FBB3C /* OnAirCloudWithWatch.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = OnAirCloudWithWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		228D6135D39C2F86EAB13CB9 /* OnAirTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = OnAirTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		23236AA932AEAB64B3FA6F64 /* RadioDiscoveryHero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioDiscoveryHero.swift; sourceTree = "<group>"; };
+		25241FD64A38D0C59FF41F49 /* OpponentSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpponentSettings.swift; sourceTree = "<group>"; };
+		278220C4A1E3FE7415293C89 /* ChessCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessCapture.swift; sourceTree = "<group>"; };
+		28CE0FE7AE433C10EA8E7657 /* RadioWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioWeatherView.swift; sourceTree = "<group>"; };
+		2C85E34548C29EF26D7B7D2C /* RadioPanelPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioPanelPresentation.swift; sourceTree = "<group>"; };
+		3449E326F3BB09D704EF4CD7 /* LiquidRadioFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidRadioFlowTests.swift; sourceTree = "<group>"; };
+		3A2DA92D919890382A3189E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3BD30867C764C9204F11D0E3 /* RecentListening.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentListening.swift; sourceTree = "<group>"; };
+		3D3789FD7B332D1C80371211 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		4107967447AABE85BEE16948 /* OnAir.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OnAir.entitlements; sourceTree = "<group>"; };
+		43460833947F79777312B4F2 /* StreamResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamResolver.swift; sourceTree = "<group>"; };
+		455EDD12D54EAD38B1F15817 /* GameAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = GameAssets.xcassets; sourceTree = "<group>"; };
+		4B46C489A04B5D63103EC801 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		4C1C808EEEE9EE51C70FC17F /* OnAirApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnAirApp.swift; sourceTree = "<group>"; };
+		4C8E0C10D924BA78E6839BD0 /* OnAirWatchWidgets.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OnAirWatchWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CEE14B37AB7371E320A1759 /* OnAirCloud.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = OnAirCloud.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5064B16C686686554FFD8A14 /* ImportedRadioGamesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportedRadioGamesTests.swift; sourceTree = "<group>"; };
+		5534BAB0A520B881B4D63290 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5C1B11ADD2204078DDFC4DD4 /* ComputerOpponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComputerOpponent.swift; sourceTree = "<group>"; };
+		5E7781FA04043D8E5BBE90AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		6064A22981F4DABA0116E89A /* RadioStudioScreens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioStudioScreens.swift; sourceTree = "<group>"; };
+		6235F5434B4DE724891CE856 /* OnAir.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OnAir.entitlements; sourceTree = "<group>"; };
+		623B62918D0C2BA4EA2C4E1B /* RadioHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioHome.swift; sourceTree = "<group>"; };
+		630BB060403B80E508126490 /* GomokuGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GomokuGame.swift; sourceTree = "<group>"; };
+		642299D1BF10F3E53A052BBB /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
+		65ED0C96EC18B5C5D3E4D4AB /* ChessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessView.swift; sourceTree = "<group>"; };
+		67FE0CB91980B6FE3575DEA8 /* SavedGameValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedGameValidation.swift; sourceTree = "<group>"; };
+		685DC22A09724098264B92C7 /* ConnectionHealth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionHealth.swift; sourceTree = "<group>"; };
+		6C5C368843FC07BCBB740678 /* OnAir.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OnAir.entitlements; sourceTree = "<group>"; };
+		73A7CB678CCF8AD9162C5D4B /* BoardQuickMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardQuickMenu.swift; sourceTree = "<group>"; };
+		784E2DD10AD9EA2B15BAFCC6 /* RadioQuickSlots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioQuickSlots.swift; sourceTree = "<group>"; };
+		7991CD1379CD16A96F038FCB /* OnAirCloud.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OnAirCloud.entitlements; sourceTree = "<group>"; };
+		79F2033EF62C145AFCB273E2 /* LiquidRadioDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidRadioDesign.swift; sourceTree = "<group>"; };
+		7A4A3CA3F0C681C074D0D7E4 /* RadioShortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioShortcuts.swift; sourceTree = "<group>"; };
+		8299C4944481C450C385DEEE /* OnAirTV.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = OnAirTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B2100918A7E0D05E11779E8 /* RadioFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioFeatures.swift; sourceTree = "<group>"; };
+		8CAAC9E50BEAF6D5F97E2A57 /* OnAir.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = OnAir.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DC2A69DB68B26917C068E45 /* StudioRedesignFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudioRedesignFlowTests.swift; sourceTree = "<group>"; };
+		8EC21E70D3D5F0E3E95F57F2 /* OnAir.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OnAir.entitlements; sourceTree = "<group>"; };
+		90EF8F4C282011331E11BCB5 /* ChessHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessHistory.swift; sourceTree = "<group>"; };
+		95D237B5C2F84D82E140767A /* WeatherDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailView.swift; sourceTree = "<group>"; };
+		9964BB53231D56398C2120AB /* FavoriteReorderDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteReorderDrop.swift; sourceTree = "<group>"; };
+		9CC40CD2F010395DCC226E29 /* RadioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioPlayer.swift; sourceTree = "<group>"; };
+		A7BE27A69205806E9D234545 /* RadioFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioFlowTests.swift; sourceTree = "<group>"; };
+		A841790C71B958B91D96D585 /* RadioWidgetPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioWidgetPresentation.swift; sourceTree = "<group>"; };
+		A886179D1E1D70A7CAE14041 /* RadioWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioWidgets.swift; sourceTree = "<group>"; };
+		A946DFBF599EF05B2A5137D2 /* BoardMaterials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardMaterials.swift; sourceTree = "<group>"; };
+		AE494EFC76A04AB02CBF24A0 /* HapticGlassTuner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticGlassTuner.swift; sourceTree = "<group>"; };
+		AE62D30F7498094E21594EA6 /* DeviceSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceSync.swift; sourceTree = "<group>"; };
+		AFCBFB95BBD9D2004F738603 /* OnAirWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnAirWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B50F1C946A5DC46F9F891B51 /* ChessArena.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessArena.swift; sourceTree = "<group>"; };
+		BB7BDED0B7DAEF652E48B6AC /* WeatherRadioWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRadioWidget.swift; sourceTree = "<group>"; };
+		BBD69388B3F8B128010B92CD /* CatalogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogTests.swift; sourceTree = "<group>"; };
+		BD29A4C1F0F79A09E500D737 /* WeatherRadioFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRadioFlowTests.swift; sourceTree = "<group>"; };
+		BE277704D4136590900E3555 /* ProgramSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramSchedule.swift; sourceTree = "<group>"; };
+		BF834EFD992AACC77DE03B10 /* FeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureTests.swift; sourceTree = "<group>"; };
+		C31B9F725F7A2877BB718B9D /* GomokuHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GomokuHistoryView.swift; sourceTree = "<group>"; };
+		C43AA75FE726CBCE4980D4BA /* RemovedRadioFeatureCleanup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemovedRadioFeatureCleanup.swift; sourceTree = "<group>"; };
+		C4435861E022F6CA620E0F88 /* RadioExperienceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioExperienceTests.swift; sourceTree = "<group>"; };
+		C52F8E3990A475BBFC896893 /* PinchZoomCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinchZoomCanvas.swift; sourceTree = "<group>"; };
+		C6CE939EF15B61F473AB72CE /* stations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = stations.json; sourceTree = "<group>"; };
+		C73D228A97070100E84DB7F9 /* RadioActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioActivity.swift; sourceTree = "<group>"; };
+		C9AF079993EAA7C54C81A5FA /* WeatherWidgetPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherWidgetPresentation.swift; sourceTree = "<group>"; };
+		CA7FBF846D9D9277F04DAB5C /* OnAirUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = OnAirUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAE19DF5B63427C6C397360C /* GomokuBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GomokuBoard.swift; sourceTree = "<group>"; };
+		CC1B234A3653D6272D1B579B /* CBSShortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBSShortcuts.swift; sourceTree = "<group>"; };
+		CC7EB3E5F40CBFFE11511570 /* ChessGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessGame.swift; sourceTree = "<group>"; };
+		CE8E2D897AF2BDC05B155AEF /* SudokuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SudokuView.swift; sourceTree = "<group>"; };
+		D1F5075C69BB53110AF4E43D /* RadioControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioControls.swift; sourceTree = "<group>"; };
+		D2850A4FA13641A033372F07 /* ChannelSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelSchedule.swift; sourceTree = "<group>"; };
+		D90EFEC73BC8BADDE5B19797 /* WeatherAndLineupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAndLineupTests.swift; sourceTree = "<group>"; };
+		DB67B042D3C6F505785F7347 /* RadioPresets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioPresets.swift; sourceTree = "<group>"; };
+		E53CA49ACF1BEACBD8ABBF63 /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
+		E84532396D83DC8D1033E127 /* RadioWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioWeather.swift; sourceTree = "<group>"; };
+		EFB01359B95A0ACB4969E09B /* OnAirWithWatch.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = OnAirWithWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F75FB1A68D1C07DE62067636 /* OnAirWidgets.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = OnAirWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8AABFDA83A8086688E1A45D /* OnAirWatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnAirWatch.swift; sourceTree = "<group>"; };
+		FE13A5B235C9A35DB5457A83 /* PlaybackIntents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackIntents.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0EFE6A5F458B681AAAF06268 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				9964BB53231D56398C2120AB /* FavoriteReorderDrop.swift */,
+				AE494EFC76A04AB02CBF24A0 /* HapticGlassTuner.swift */,
+				3D3789FD7B332D1C80371211 /* Info.plist */,
+				79F2033EF62C145AFCB273E2 /* LiquidRadioDesign.swift */,
+				4107967447AABE85BEE16948 /* OnAir.entitlements */,
+				4C1C808EEEE9EE51C70FC17F /* OnAirApp.swift */,
+				7991CD1379CD16A96F038FCB /* OnAirCloud.entitlements */,
+				23236AA932AEAB64B3FA6F64 /* RadioDiscoveryHero.swift */,
+				0ADE278EA15A48AE0BD7B1F9 /* RadioExtras.swift */,
+				8B2100918A7E0D05E11779E8 /* RadioFeatures.swift */,
+				623B62918D0C2BA4EA2C4E1B /* RadioHome.swift */,
+				7A4A3CA3F0C681C074D0D7E4 /* RadioShortcuts.swift */,
+				6064A22981F4DABA0116E89A /* RadioStudioScreens.swift */,
+				28CE0FE7AE433C10EA8E7657 /* RadioWeatherView.swift */,
+				C43AA75FE726CBCE4980D4BA /* RemovedRadioFeatureCleanup.swift */,
+				95D237B5C2F84D82E140767A /* WeatherDetailView.swift */,
+				26557EF809200BCECE7B17AA /* Games */,
+			);
+			name = iOS;
+			path = OnAir/iOS;
+			sourceTree = "<group>";
+		};
+		19F1BBB234FA9062BF0EB5AE /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				CC1B234A3653D6272D1B579B /* CBSShortcuts.swift */,
+				D2850A4FA13641A033372F07 /* ChannelSchedule.swift */,
+				685DC22A09724098264B92C7 /* ConnectionHealth.swift */,
+				05484E1009E1834562592D54 /* Design.swift */,
+				AE62D30F7498094E21594EA6 /* DeviceSync.swift */,
+				FE13A5B235C9A35DB5457A83 /* PlaybackIntents.swift */,
+				BE277704D4136590900E3555 /* ProgramSchedule.swift */,
+				C73D228A97070100E84DB7F9 /* RadioActivity.swift */,
+				D1F5075C69BB53110AF4E43D /* RadioControls.swift */,
+				2C85E34548C29EF26D7B7D2C /* RadioPanelPresentation.swift */,
+				9CC40CD2F010395DCC226E29 /* RadioPlayer.swift */,
+				DB67B042D3C6F505785F7347 /* RadioPresets.swift */,
+				784E2DD10AD9EA2B15BAFCC6 /* RadioQuickSlots.swift */,
+				E84532396D83DC8D1033E127 /* RadioWeather.swift */,
+				A841790C71B958B91D96D585 /* RadioWidgetPresentation.swift */,
+				3BD30867C764C9204F11D0E3 /* RecentListening.swift */,
+				E53CA49ACF1BEACBD8ABBF63 /* Station.swift */,
+				43460833947F79777312B4F2 /* StreamResolver.swift */,
+				18B3853D250E049ECC374D85 /* WakeRadio.swift */,
+				C9AF079993EAA7C54C81A5FA /* WeatherWidgetPresentation.swift */,
+			);
+			name = Shared;
+			path = OnAir/Shared;
+			sourceTree = "<group>";
+		};
+		25A660A7FA8608D03CF3482F /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				278220C4A1E3FE7415293C89 /* ChessCapture.swift */,
+				CC7EB3E5F40CBFFE11511570 /* ChessGame.swift */,
+				90EF8F4C282011331E11BCB5 /* ChessHistory.swift */,
+				5C1B11ADD2204078DDFC4DD4 /* ComputerOpponent.swift */,
+				630BB060403B80E508126490 /* GomokuGame.swift */,
+				1C236F81CF760F15AB2D3D55 /* GomokuHistory.swift */,
+				67FE0CB91980B6FE3575DEA8 /* SavedGameValidation.swift */,
+				06955840A8B11CC5A3B3BC88 /* SudokuGame.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		26557EF809200BCECE7B17AA /* Games */ = {
+			isa = PBXGroup;
+			children = (
+				455EDD12D54EAD38B1F15817 /* GameAssets.xcassets */,
+				25A660A7FA8608D03CF3482F /* Core */,
+				AB446EFA06B3C91E7855810A /* UI */,
+			);
+			path = Games;
+			sourceTree = "<group>";
+		};
+		3455246167096446E45FCD27 = {
+			isa = PBXGroup;
+			children = (
+				0EFE6A5F458B681AAAF06268 /* iOS */,
+				67AFB43ADAB122FA8B2951DF /* OnAirTests */,
+				8014D6E7631E1A5AC7E46362 /* OnAirUITests */,
+				CE786B620D9CD3EE9687D6B7 /* Resources */,
+				19F1BBB234FA9062BF0EB5AE /* Shared */,
+				B4803A54903511D313726876 /* TV */,
+				62578AC585D3B8D7F035BEC5 /* Watch */,
+				A2A9BF46B1C48D949460C401 /* Widgets */,
+				C0402454F09BE8730427D611 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		62578AC585D3B8D7F035BEC5 /* Watch */ = {
+			isa = PBXGroup;
+			children = (
+				4B46C489A04B5D63103EC801 /* Info.plist */,
+				6235F5434B4DE724891CE856 /* OnAir.entitlements */,
+				F8AABFDA83A8086688E1A45D /* OnAirWatch.swift */,
+			);
+			name = Watch;
+			path = OnAir/Watch;
+			sourceTree = "<group>";
+		};
+		67AFB43ADAB122FA8B2951DF /* OnAirTests */ = {
+			isa = PBXGroup;
+			children = (
+				BBD69388B3F8B128010B92CD /* CatalogTests.swift */,
+				BF834EFD992AACC77DE03B10 /* FeatureTests.swift */,
+				5064B16C686686554FFD8A14 /* ImportedRadioGamesTests.swift */,
+				C4435861E022F6CA620E0F88 /* RadioExperienceTests.swift */,
+				D90EFEC73BC8BADDE5B19797 /* WeatherAndLineupTests.swift */,
+			);
+			path = OnAirTests;
+			sourceTree = "<group>";
+		};
+		8014D6E7631E1A5AC7E46362 /* OnAirUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3449E326F3BB09D704EF4CD7 /* LiquidRadioFlowTests.swift */,
+				086522F6DA6D8CDC0465B0E8 /* RadioExtrasFlowTests.swift */,
+				A7BE27A69205806E9D234545 /* RadioFlowTests.swift */,
+				8DC2A69DB68B26917C068E45 /* StudioRedesignFlowTests.swift */,
+				BD29A4C1F0F79A09E500D737 /* WeatherRadioFlowTests.swift */,
+			);
+			path = OnAirUITests;
+			sourceTree = "<group>";
+		};
+		A2A9BF46B1C48D949460C401 /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				3A2DA92D919890382A3189E0 /* Info.plist */,
+				8EC21E70D3D5F0E3E95F57F2 /* OnAir.entitlements */,
+				A886179D1E1D70A7CAE14041 /* RadioWidgets.swift */,
+				BB7BDED0B7DAEF652E48B6AC /* WeatherRadioWidget.swift */,
+			);
+			name = Widgets;
+			path = OnAir/Widgets;
+			sourceTree = "<group>";
+		};
+		AB446EFA06B3C91E7855810A /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				A946DFBF599EF05B2A5137D2 /* BoardMaterials.swift */,
+				73A7CB678CCF8AD9162C5D4B /* BoardQuickMenu.swift */,
+				B50F1C946A5DC46F9F891B51 /* ChessArena.swift */,
+				01711CB8C37A6D204D387655 /* ChessHistoryView.swift */,
+				65ED0C96EC18B5C5D3E4D4AB /* ChessView.swift */,
+				642299D1BF10F3E53A052BBB /* DesignSystem.swift */,
+				183AF67A62C26E2F007CFBD2 /* GameThemes.swift */,
+				CAE19DF5B63427C6C397360C /* GomokuBoard.swift */,
+				C31B9F725F7A2877BB718B9D /* GomokuHistoryView.swift */,
+				119A155F666FCF498788AB34 /* GomokuView.swift */,
+				25241FD64A38D0C59FF41F49 /* OpponentSettings.swift */,
+				C52F8E3990A475BBFC896893 /* PinchZoomCanvas.swift */,
+				CE8E2D897AF2BDC05B155AEF /* SudokuView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		B4803A54903511D313726876 /* TV */ = {
+			isa = PBXGroup;
+			children = (
+				5E7781FA04043D8E5BBE90AB /* Info.plist */,
+				6C5C368843FC07BCBB740678 /* OnAir.entitlements */,
+				13D641D77CD9D1D0457475DD /* OnAirTV.swift */,
+			);
+			name = TV;
+			path = OnAir/TV;
+			sourceTree = "<group>";
+		};
+		C0402454F09BE8730427D611 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8CAAC9E50BEAF6D5F97E2A57 /* OnAir.app */,
+				4CEE14B37AB7371E320A1759 /* OnAirCloud.app */,
+				1E97C2BC713794F4AF6FBB3C /* OnAirCloudWithWatch.app */,
+				228D6135D39C2F86EAB13CB9 /* OnAirTests.xctest */,
+				8299C4944481C450C385DEEE /* OnAirTV.app */,
+				CA7FBF846D9D9277F04DAB5C /* OnAirUITests.xctest */,
+				AFCBFB95BBD9D2004F738603 /* OnAirWatch.app */,
+				4C8E0C10D924BA78E6839BD0 /* OnAirWatchWidgets.appex */,
+				F75FB1A68D1C07DE62067636 /* OnAirWidgets.appex */,
+				EFB01359B95A0ACB4969E09B /* OnAirWithWatch.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CE786B620D9CD3EE9687D6B7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5534BAB0A520B881B4D63290 /* Assets.xcassets */,
+				C6CE939EF15B61F473AB72CE /* stations.json */,
+			);
+			name = Resources;
+			path = OnAir/Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		184F785AACCE6D1F1954EF19 /* OnAirWidgets */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2F168D6E610A0CEBD2E1335 /* Build configuration list for PBXNativeTarget "OnAirWidgets" */;
+			buildPhases = (
+				FD2401209B89059A5EFA8810 /* Sources */,
+				730A5C4A02ABAC8E0F9D4D0A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OnAirWidgets;
+			packageProductDependencies = (
+			);
+			productName = OnAirWidgets;
+			productReference = F75FB1A68D1C07DE62067636 /* OnAirWidgets.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		1AFB038C39EA7EF20C942417 /* OnAirCloud */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6FD5801C13BDEF92D39C5931 /* Build configuration list for PBXNativeTarget "OnAirCloud" */;
+			buildPhases = (
+				AE6EB147F73E3105C372105B /* Sources */,
+				4BBB216174C8B555E0B31F68 /* Resources */,
+				FD8779128C467DD9D7CF9394 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C17B5AF93B43878208EDA9E2 /* PBXTargetDependency */,
+			);
+			name = OnAirCloud;
+			packageProductDependencies = (
+			);
+			productName = OnAirCloud;
+			productReference = 4CEE14B37AB7371E320A1759 /* OnAirCloud.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3DA33D0EB7937F021F359F1A /* OnAirCloudWithWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 54281269E542C6ADB03CFC40 /* Build configuration list for PBXNativeTarget "OnAirCloudWithWatch" */;
+			buildPhases = (
+				5417625DD6F50137AAD81826 /* Sources */,
+				7852B29AB20D0A8D81CE1749 /* Resources */,
+				628DA5B85828D10B7B1D22B7 /* Embed Foundation Extensions */,
+				BACCF5571A77EC05DCEB3F08 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				05835338AD9BFC1D292F38BD /* PBXTargetDependency */,
+				4699AFC33BBE955FB7E8D87C /* PBXTargetDependency */,
+			);
+			name = OnAirCloudWithWatch;
+			packageProductDependencies = (
+			);
+			productName = OnAirCloudWithWatch;
+			productReference = 1E97C2BC713794F4AF6FBB3C /* OnAirCloudWithWatch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4A0C0E8EE3DACB92961DEFBD /* OnAirWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3337C2F744BD97A5993D2FB /* Build configuration list for PBXNativeTarget "OnAirWatch" */;
+			buildPhases = (
+				DB8BC6EDF9A91D337F9FE623 /* Sources */,
+				C072F76DCE4DF458DC5A2E8F /* Resources */,
+				A2D4DF23CE6FE6E55624EF9F /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6B198168E3521BEF05457A9D /* PBXTargetDependency */,
+			);
+			name = OnAirWatch;
+			packageProductDependencies = (
+			);
+			productName = OnAirWatch;
+			productReference = AFCBFB95BBD9D2004F738603 /* OnAirWatch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7B2CC1099688625E60F312ED /* OnAirTV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ACC27EC668BD503C00487C8D /* Build configuration list for PBXNativeTarget "OnAirTV" */;
+			buildPhases = (
+				93833B022E0C3BA1BB8B796F /* Sources */,
+				9D85DBB8B6FFCCAD029962D9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OnAirTV;
+			packageProductDependencies = (
+			);
+			productName = OnAirTV;
+			productReference = 8299C4944481C450C385DEEE /* OnAirTV.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B14E2D57E0EF70E41EE1072A /* OnAirUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E38892CE895F2F35A6BD6B1 /* Build configuration list for PBXNativeTarget "OnAirUITests" */;
+			buildPhases = (
+				CDF1C3DA2B3772D02721F91C /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B093B62A3BEC317CDEB21658 /* PBXTargetDependency */,
+			);
+			name = OnAirUITests;
+			packageProductDependencies = (
+			);
+			productName = OnAirUITests;
+			productReference = CA7FBF846D9D9277F04DAB5C /* OnAirUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		C88E6A6D46C44B9DA3135F2A /* OnAirWatchWidgets */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9805D2F80497CA98F57110B /* Build configuration list for PBXNativeTarget "OnAirWatchWidgets" */;
+			buildPhases = (
+				3EE0A6453D2BAE7EE7460DBE /* Sources */,
+				28FA689F31AFC76F6430A7F0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OnAirWatchWidgets;
+			packageProductDependencies = (
+			);
+			productName = OnAirWatchWidgets;
+			productReference = 4C8E0C10D924BA78E6839BD0 /* OnAirWatchWidgets.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		D350B6506CE88E85222DB298 /* OnAirWithWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A43ACE29C1094E65F8C2F61 /* Build configuration list for PBXNativeTarget "OnAirWithWatch" */;
+			buildPhases = (
+				53957F857769C5519CF1BF22 /* Sources */,
+				3F3D77CBBC9F3477631AF165 /* Resources */,
+				18ACAF5BD905E07B7FE04DBC /* Embed Foundation Extensions */,
+				81D7C3CD4B45FBBECC047D6D /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FD3C116B2B60C9A1F41EC252 /* PBXTargetDependency */,
+				A5096EEE3060EF5F82822FAC /* PBXTargetDependency */,
+			);
+			name = OnAirWithWatch;
+			packageProductDependencies = (
+			);
+			productName = OnAirWithWatch;
+			productReference = EFB01359B95A0ACB4969E09B /* OnAirWithWatch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DB92895451C54812613171EA /* OnAir */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E53D0BF978091AD0C751CD6 /* Build configuration list for PBXNativeTarget "OnAir" */;
+			buildPhases = (
+				84AFA686F36E3E6A16C9D108 /* Sources */,
+				351CEB653DA04B5387602A4D /* Resources */,
+				F5E518E1857814DBD42464AE /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D48D46D2F97E45850FAE68E4 /* PBXTargetDependency */,
+			);
+			name = OnAir;
+			packageProductDependencies = (
+			);
+			productName = OnAir;
+			productReference = 8CAAC9E50BEAF6D5F97E2A57 /* OnAir.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F53B52A37200684E24F2494A /* OnAirTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9062D7FA217852BF173AC388 /* Build configuration list for PBXNativeTarget "OnAirTests" */;
+			buildPhases = (
+				D7728264D1DC470001CAE1A5 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9A259F6EA7405EC23282101A /* PBXTargetDependency */,
+			);
+			name = OnAirTests;
+			packageProductDependencies = (
+			);
+			productName = OnAirTests;
+			productReference = 228D6135D39C2F86EAB13CB9 /* OnAirTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BC5977AB2C7690558226D4A2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					184F785AACCE6D1F1954EF19 = {
+						DevelopmentTeam = AXCMBMA992;
+						ProvisioningStyle = Automatic;
+					};
+					1AFB038C39EA7EF20C942417 = {
+						DevelopmentTeam = AXCMBMA992;
+						ProvisioningStyle = Automatic;
+					};
+					3DA33D0EB7937F021F359F1A = {
+						DevelopmentTeam = AXCMBMA992;
+						ProvisioningStyle = Automatic;
+					};
+					4A0C0E8EE3DACB92961DEFBD = {
+						DevelopmentTeam = AXCMBMA992;
+						ProvisioningStyle = Automatic;
+					};
+					7B2CC1099688625E60F312ED = {
+						DevelopmentTeam = AXCMBMA992;
+						ProvisioningStyle = Automatic;
+					};
+					B14E2D57E0EF70E41EE1072A = {
+						DevelopmentTeam = AXCMBMA992;
+						ProvisioningStyle = Automatic;
+						TestTargetID = DB92895451C54812613171EA;
+					};
+					C88E6A6D46C44B9DA3135F2A = {
+						DevelopmentTeam = AXCMBMA992;
+						ProvisioningStyle = Automatic;
+					};
+					D350B6506CE88E85222DB298 = {
+						DevelopmentTeam = AXCMBMA992;
+						ProvisioningStyle = Automatic;
+					};
+					DB92895451C54812613171EA = {
+						DevelopmentTeam = AXCMBMA992;
+						ProvisioningStyle = Automatic;
+					};
+					F53B52A37200684E24F2494A = {
+						DevelopmentTeam = AXCMBMA992;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = B3BBC3E9D4AB308EC7FDE1E9 /* Build configuration list for PBXProject "OnAir" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 3455246167096446E45FCD27;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DB92895451C54812613171EA /* OnAir */,
+				1AFB038C39EA7EF20C942417 /* OnAirCloud */,
+				3DA33D0EB7937F021F359F1A /* OnAirCloudWithWatch */,
+				7B2CC1099688625E60F312ED /* OnAirTV */,
+				F53B52A37200684E24F2494A /* OnAirTests */,
+				B14E2D57E0EF70E41EE1072A /* OnAirUITests */,
+				4A0C0E8EE3DACB92961DEFBD /* OnAirWatch */,
+				C88E6A6D46C44B9DA3135F2A /* OnAirWatchWidgets */,
+				184F785AACCE6D1F1954EF19 /* OnAirWidgets */,
+				D350B6506CE88E85222DB298 /* OnAirWithWatch */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		28FA689F31AFC76F6430A7F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				734F5869B5A8B3B49A988BD3 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		351CEB653DA04B5387602A4D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5B31488989ACF3489771A71 /* Assets.xcassets in Resources */,
+				04069F243CE19409E17A4A2A /* GameAssets.xcassets in Resources */,
+				FC3B5ACF10C3BE585C6C2257 /* stations.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F3D77CBBC9F3477631AF165 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7598B3D6BC804EAE41F8AAA /* Assets.xcassets in Resources */,
+				E8504E70E6100C66BAA7BBE3 /* GameAssets.xcassets in Resources */,
+				8D0E3D6308CB2BE9DF0C91EC /* stations.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BBB216174C8B555E0B31F68 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89CE21C39F7A2D68B35E6494 /* Assets.xcassets in Resources */,
+				13ECE1D29F9900FCB077700B /* GameAssets.xcassets in Resources */,
+				2880353D376ABE1BF80BFEB1 /* stations.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		730A5C4A02ABAC8E0F9D4D0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDFEAD66C17877D8D420FD5A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7852B29AB20D0A8D81CE1749 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E893635F905739248ECA79D /* Assets.xcassets in Resources */,
+				E9433A8DCE319E177DB2E64E /* GameAssets.xcassets in Resources */,
+				33E403612FE1D7B4A507F651 /* stations.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D85DBB8B6FFCCAD029962D9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7BC1882026689ADB130FE61C /* stations.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C072F76DCE4DF458DC5A2E8F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DAF679C7E31E94EB30FEBD4 /* Assets.xcassets in Resources */,
+				326EC9D21FCD75A788C0CAE7 /* stations.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3EE0A6453D2BAE7EE7460DBE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91589BB843EAD7EC7FBA0D63 /* CBSShortcuts.swift in Sources */,
+				25471B457F81DBDE444FA4AF /* ChannelSchedule.swift in Sources */,
+				26B2543578202B968528398A /* ConnectionHealth.swift in Sources */,
+				84DEB974D3430D9008D9FA98 /* Design.swift in Sources */,
+				AF0A08D2311FA3C8839DB880 /* DeviceSync.swift in Sources */,
+				39A74276A35ACBD62A657374 /* PlaybackIntents.swift in Sources */,
+				95073E0E31800D2CBCCF6BF3 /* ProgramSchedule.swift in Sources */,
+				A04433C30BC77120115E2374 /* RadioActivity.swift in Sources */,
+				2771514AC760DD183376F9D2 /* RadioControls.swift in Sources */,
+				E69D47B447421B38C77BB9EE /* RadioPanelPresentation.swift in Sources */,
+				80CDD2F374481346D02C889B /* RadioPlayer.swift in Sources */,
+				59C5B0244795DDE87B51E513 /* RadioPresets.swift in Sources */,
+				03F346573C22165088889556 /* RadioQuickSlots.swift in Sources */,
+				B7EF6641F842CD22E4170004 /* RadioWeather.swift in Sources */,
+				6B310DF95E5D4B354B876F5C /* RadioWidgetPresentation.swift in Sources */,
+				2B5BAED2A93C4E2D0F03F5BE /* RadioWidgets.swift in Sources */,
+				63F34D5F81609234CF53A268 /* RecentListening.swift in Sources */,
+				6B2B2530E2CB81DE252682E6 /* Station.swift in Sources */,
+				5897ED6DAF841D614A2C2EE9 /* StreamResolver.swift in Sources */,
+				F02657E6F947DC852FCF0B90 /* WakeRadio.swift in Sources */,
+				B1334EF3536346800D90B3C1 /* WeatherWidgetPresentation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53957F857769C5519CF1BF22 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F28102FB0668E0099E384C7 /* BoardMaterials.swift in Sources */,
+				85FB571A4B45F9915BD5BED3 /* BoardQuickMenu.swift in Sources */,
+				2A538617A0FC200E1A195AB2 /* CBSShortcuts.swift in Sources */,
+				E8B743C4FBA912286241061A /* ChannelSchedule.swift in Sources */,
+				CD56838D4B0A1FD7F38F84BC /* ChessArena.swift in Sources */,
+				EF2B1A9283EBAC551263C307 /* ChessCapture.swift in Sources */,
+				E5E714C94DDD15B7F4FABEEC /* ChessGame.swift in Sources */,
+				6665950646EC7BEDAC24E9F4 /* ChessHistory.swift in Sources */,
+				64B2A678CEE5ED050FFB90A6 /* ChessHistoryView.swift in Sources */,
+				AACB060C176EC675E6CDE67C /* ChessView.swift in Sources */,
+				C4446418FD84D235A2A4D72B /* ComputerOpponent.swift in Sources */,
+				C8EC3B9F1DCC65D01663CF72 /* ConnectionHealth.swift in Sources */,
+				F568064227E70714CCBDEC72 /* Design.swift in Sources */,
+				76FF232DF11B8FD101D1C815 /* DesignSystem.swift in Sources */,
+				82F3077ED85B547E1AC02E4E /* DeviceSync.swift in Sources */,
+				67F8D11AA2205E7CF0B23AC0 /* FavoriteReorderDrop.swift in Sources */,
+				4FAC022146EAE7FA60D039BD /* GameThemes.swift in Sources */,
+				CE4A291E01A8BF757DD42FDA /* GomokuBoard.swift in Sources */,
+				C553A8D0CA06926504575099 /* GomokuGame.swift in Sources */,
+				6640E4B5E8A7B6A095D18B2A /* GomokuHistory.swift in Sources */,
+				C51959E8C64B8018A1CE9E29 /* GomokuHistoryView.swift in Sources */,
+				F31C728366D77DC9041BEFE8 /* GomokuView.swift in Sources */,
+				3BC93EBF46C2F70CFC925D1B /* HapticGlassTuner.swift in Sources */,
+				75A74A3B5429821DA955D90E /* LiquidRadioDesign.swift in Sources */,
+				9D3FE2ADD29EC5653B55A5C9 /* OnAirApp.swift in Sources */,
+				210424437DA4210B72BF3ED0 /* OpponentSettings.swift in Sources */,
+				22922251585C17AE923FB7BD /* PinchZoomCanvas.swift in Sources */,
+				DAD96AC0DE63C856272A127C /* PlaybackIntents.swift in Sources */,
+				FA5922F0D8FFE5E10855A588 /* ProgramSchedule.swift in Sources */,
+				C1749C76275C0F280249C47A /* RadioActivity.swift in Sources */,
+				C043D2A4B6181AEBF7ADD354 /* RadioControls.swift in Sources */,
+				7A22AC7AA90AF25B5243C8D1 /* RadioDiscoveryHero.swift in Sources */,
+				F15CDFB1B5EF5470F17E4697 /* RadioExtras.swift in Sources */,
+				E35D1F3E0A6A65E59D4B65DC /* RadioFeatures.swift in Sources */,
+				3044FBC4A33E28307876C9C4 /* RadioHome.swift in Sources */,
+				452D92E8240F6518DF910EC2 /* RadioPanelPresentation.swift in Sources */,
+				294F30DD7565C544D641B34B /* RadioPlayer.swift in Sources */,
+				C62D9FB19A5D8E084F42B191 /* RadioPresets.swift in Sources */,
+				E99DBD35181D29825217135D /* RadioQuickSlots.swift in Sources */,
+				1B6CA5416C135FFF6332C6A0 /* RadioShortcuts.swift in Sources */,
+				ADF638F6BBEF1662CA6ACEC0 /* RadioStudioScreens.swift in Sources */,
+				41FF42B3AC93F2A05B692C92 /* RadioWeather.swift in Sources */,
+				316EBEC789A04FC978809A6D /* RadioWeatherView.swift in Sources */,
+				EC8E0F68064AF7A4FBD1DBEE /* RadioWidgetPresentation.swift in Sources */,
+				CCDC86F03983A411156B4E09 /* RecentListening.swift in Sources */,
+				D168D7503E695AB2E1322C8A /* RemovedRadioFeatureCleanup.swift in Sources */,
+				EAE6F3D70AF7991EAC8BF5A9 /* SavedGameValidation.swift in Sources */,
+				BBF04D5994FA3BD9A0425842 /* Station.swift in Sources */,
+				242037E17551C0DC713BF4EF /* StreamResolver.swift in Sources */,
+				E983EA61641DF1CA25D92FAF /* SudokuGame.swift in Sources */,
+				C84D4A5C2CE76D3F91842DF9 /* SudokuView.swift in Sources */,
+				354A56ED918B60115F5915D3 /* WakeRadio.swift in Sources */,
+				D2EB661DA8C1F4035201608E /* WeatherDetailView.swift in Sources */,
+				284C38A400023E9350A3EE20 /* WeatherWidgetPresentation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5417625DD6F50137AAD81826 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E11FA98712DF19C63D00150 /* BoardMaterials.swift in Sources */,
+				D7A25140AC8F0D5D9AA88F35 /* BoardQuickMenu.swift in Sources */,
+				E310697ACAC75A65B9D4B8FE /* CBSShortcuts.swift in Sources */,
+				AC2CAFA04E96A52F2E0575B5 /* ChannelSchedule.swift in Sources */,
+				629D3633E8FF55B513BFA354 /* ChessArena.swift in Sources */,
+				1228669FA552C24E8BEBDD2E /* ChessCapture.swift in Sources */,
+				4686401AE117063B4D8AB826 /* ChessGame.swift in Sources */,
+				48B2280893BCF04A2D074584 /* ChessHistory.swift in Sources */,
+				7E7CC3C8A0E567A2D459E7C7 /* ChessHistoryView.swift in Sources */,
+				97D416529D84529405237AA5 /* ChessView.swift in Sources */,
+				DCCCFC8823724C03DB3C0535 /* ComputerOpponent.swift in Sources */,
+				95537A58C3C8C501C920126A /* ConnectionHealth.swift in Sources */,
+				F79D553094DC2C495D5BE9C6 /* Design.swift in Sources */,
+				6EDB7BACBE4BF41AFAB80A38 /* DesignSystem.swift in Sources */,
+				680DFE9ECE2ABBCA847DC399 /* DeviceSync.swift in Sources */,
+				59F36DBF04A0A4F4ED9D1A62 /* FavoriteReorderDrop.swift in Sources */,
+				4A02437AA866CE8774CEAA3E /* GameThemes.swift in Sources */,
+				65DB1503E82C1848D0C44B7A /* GomokuBoard.swift in Sources */,
+				DDFC012603C5875701308A8A /* GomokuGame.swift in Sources */,
+				974E068BD0C4F4A5072868AD /* GomokuHistory.swift in Sources */,
+				D4B9AAC6B2DCE43A78895D2E /* GomokuHistoryView.swift in Sources */,
+				ED8EAD411D391F130C0957FC /* GomokuView.swift in Sources */,
+				F72E5CDC3AE841134D226B3C /* HapticGlassTuner.swift in Sources */,
+				D1CC8C6BEBB5D7AAF90E7187 /* LiquidRadioDesign.swift in Sources */,
+				0AADA6183BB025DB99330328 /* OnAirApp.swift in Sources */,
+				56F43366C151E5EA6102EB32 /* OpponentSettings.swift in Sources */,
+				C1F37AF48EB81AB4D185FDF3 /* PinchZoomCanvas.swift in Sources */,
+				DA62CF21207936899C3AF961 /* PlaybackIntents.swift in Sources */,
+				3876197581776BF3B6ABCBC8 /* ProgramSchedule.swift in Sources */,
+				F86D2635AFF9FEB973BDC951 /* RadioActivity.swift in Sources */,
+				F06168FB5FCDCE141A0ED56A /* RadioControls.swift in Sources */,
+				7B21EC1826E953A78A4C9FC6 /* RadioDiscoveryHero.swift in Sources */,
+				97DEA57466B9F715CB26A62F /* RadioExtras.swift in Sources */,
+				F5824386F5A242F0C7AF612F /* RadioFeatures.swift in Sources */,
+				C17D06A79BFD873AA49372CD /* RadioHome.swift in Sources */,
+				1FC7EBEBA674DD8EDCF891AC /* RadioPanelPresentation.swift in Sources */,
+				0EAC318748CDBD101C4770CA /* RadioPlayer.swift in Sources */,
+				89E27543F37A4F9FC02090C4 /* RadioPresets.swift in Sources */,
+				F07323870A3F36069635E185 /* RadioQuickSlots.swift in Sources */,
+				5D7DE8991EB8AC5BD3B57DEC /* RadioShortcuts.swift in Sources */,
+				301B890A56AC7DFFBB1EFB19 /* RadioStudioScreens.swift in Sources */,
+				FA676B63D8238E5EEF11664E /* RadioWeather.swift in Sources */,
+				F8C2CF1C3D171D363C430637 /* RadioWeatherView.swift in Sources */,
+				6A5AE6E2E6270B1499C7ACD5 /* RadioWidgetPresentation.swift in Sources */,
+				C703A03A715B7751905B76B6 /* RecentListening.swift in Sources */,
+				727D182E7B862A8FD5746758 /* RemovedRadioFeatureCleanup.swift in Sources */,
+				E11C1E799D9DCFB625432E4A /* SavedGameValidation.swift in Sources */,
+				68B245FCCCA3C2306B4420D1 /* Station.swift in Sources */,
+				6EC33A5EF99270CABD463176 /* StreamResolver.swift in Sources */,
+				9D61570F7C948A45538371B9 /* SudokuGame.swift in Sources */,
+				5A8D3D169E68605721B962F5 /* SudokuView.swift in Sources */,
+				9FB3DC46A61EDC94D8232F48 /* WakeRadio.swift in Sources */,
+				8CCF5467C2162395EE3F542B /* WeatherDetailView.swift in Sources */,
+				F067BFBF097ED787A689889A /* WeatherWidgetPresentation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84AFA686F36E3E6A16C9D108 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFFB1AC1700CD6560E13272C /* BoardMaterials.swift in Sources */,
+				98E4AF36CFDC50917577C9EF /* BoardQuickMenu.swift in Sources */,
+				933F9AC89A03FF6350D5D37B /* CBSShortcuts.swift in Sources */,
+				86B72BC8891C44CCC5169B89 /* ChannelSchedule.swift in Sources */,
+				24F02FF2FBF0FABF8B827AFB /* ChessArena.swift in Sources */,
+				93A6EC080EB0F62E0677E3F6 /* ChessCapture.swift in Sources */,
+				807DAC46FD6842D0E682B40F /* ChessGame.swift in Sources */,
+				5D3A2E5E4CD3B6B13C602F46 /* ChessHistory.swift in Sources */,
+				EB468AFF5F7E0B2C3EBE2969 /* ChessHistoryView.swift in Sources */,
+				BDAD57ED1481EEC06B60202E /* ChessView.swift in Sources */,
+				698AF323B92D79820F839056 /* ComputerOpponent.swift in Sources */,
+				07D3574399D6A75B73AA76EB /* ConnectionHealth.swift in Sources */,
+				5D80A1F9918CA108C75003C1 /* Design.swift in Sources */,
+				3406AE24B951DFE9AE5347B0 /* DesignSystem.swift in Sources */,
+				0EEA1BD223E02B5520FD8B58 /* DeviceSync.swift in Sources */,
+				43E255AC37E850547762EB30 /* FavoriteReorderDrop.swift in Sources */,
+				2F179E5EA9E64ECA541F08EC /* GameThemes.swift in Sources */,
+				C7CD319CD74BE63FB68C943A /* GomokuBoard.swift in Sources */,
+				13B1C616D9E50180DA478FA1 /* GomokuGame.swift in Sources */,
+				7A4436D78E1B0202F60555A5 /* GomokuHistory.swift in Sources */,
+				AE02A006F6A23C3B640BE81D /* GomokuHistoryView.swift in Sources */,
+				53331A98235456B349DB0CAB /* GomokuView.swift in Sources */,
+				7F42B864A96D1C7E997AB703 /* HapticGlassTuner.swift in Sources */,
+				9833DBFF2B9DC2F46CAED720 /* LiquidRadioDesign.swift in Sources */,
+				8386A0DF50C42D73AC25A62E /* OnAirApp.swift in Sources */,
+				88547244DBDA413C70D5EAA4 /* OpponentSettings.swift in Sources */,
+				60042A0D0735AA168C18A739 /* PinchZoomCanvas.swift in Sources */,
+				0330FABEA885D3389F41DB87 /* PlaybackIntents.swift in Sources */,
+				16B514954A62E655D7DB115F /* ProgramSchedule.swift in Sources */,
+				A7CE7984D4B0151850ACECB6 /* RadioActivity.swift in Sources */,
+				CAC9B3AB9F83C84EB6CDA17D /* RadioControls.swift in Sources */,
+				82CE3A2C1F54AE4D2A1E08B3 /* RadioDiscoveryHero.swift in Sources */,
+				B7D638003FEDA33BD6D70CCD /* RadioExtras.swift in Sources */,
+				B27DBB60034BF6D301ADC1BB /* RadioFeatures.swift in Sources */,
+				AA7E6C00F10DCFEDC0E50806 /* RadioHome.swift in Sources */,
+				CBDC746C79A284C101607765 /* RadioPanelPresentation.swift in Sources */,
+				1E8989C194BE6715818001DB /* RadioPlayer.swift in Sources */,
+				2D0E9BD98AB684E459A2002E /* RadioPresets.swift in Sources */,
+				AA8E83CFC5581D3D256C98E3 /* RadioQuickSlots.swift in Sources */,
+				E89B7A703AD9D0CAFB9FBB1B /* RadioShortcuts.swift in Sources */,
+				E636FED43082A526A6C3AEE5 /* RadioStudioScreens.swift in Sources */,
+				640E4911FA4BF9C65C9F88BE /* RadioWeather.swift in Sources */,
+				8B1FEBD91F26275AAC80906A /* RadioWeatherView.swift in Sources */,
+				07605C64C2A0AAC944D4D2FE /* RadioWidgetPresentation.swift in Sources */,
+				88AE21EE940AC3696DCB6D32 /* RecentListening.swift in Sources */,
+				3443D397DD119D418E7053FD /* RemovedRadioFeatureCleanup.swift in Sources */,
+				73EE33ADD56D006390448FFA /* SavedGameValidation.swift in Sources */,
+				D2DF84A8D6B9697592375E4D /* Station.swift in Sources */,
+				A935661767DF20EF2CD7CD74 /* StreamResolver.swift in Sources */,
+				36934781546E05E31554D33D /* SudokuGame.swift in Sources */,
+				EBA12C27B1E7D5B4ACDD1873 /* SudokuView.swift in Sources */,
+				AD295A4C00E8F5EDEEB86D46 /* WakeRadio.swift in Sources */,
+				C2200E3398B756D854A3FE6D /* WeatherDetailView.swift in Sources */,
+				7F3A0D17B5413C40C2935640 /* WeatherWidgetPresentation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93833B022E0C3BA1BB8B796F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D196423EA46A3D281513E5FC /* CBSShortcuts.swift in Sources */,
+				D5ACFCA8185F38495C99E5BC /* ChannelSchedule.swift in Sources */,
+				B57A3D16318B0DEF20B2DE73 /* ConnectionHealth.swift in Sources */,
+				D7E10140A5ADA40C10942260 /* Design.swift in Sources */,
+				88FFA1FC1FC6FA2E39BD6FFA /* DeviceSync.swift in Sources */,
+				F4DA4696A97C0DEEE4DB1937 /* OnAirTV.swift in Sources */,
+				7E6B5FA1A7CEDE7B442D5B7D /* PlaybackIntents.swift in Sources */,
+				60645F7FBB758AF594699800 /* ProgramSchedule.swift in Sources */,
+				889E3DFDE75A19BA612AB203 /* RadioActivity.swift in Sources */,
+				0FA0F9B4B84672D7E9195C0C /* RadioControls.swift in Sources */,
+				9E7184D00F0DCE9A353BE41C /* RadioPanelPresentation.swift in Sources */,
+				F171B57217F6D86CE64A0C0D /* RadioPlayer.swift in Sources */,
+				370A3ED095728B478B9CB08F /* RadioPresets.swift in Sources */,
+				94E172827DD30AF7A6D87D26 /* RadioQuickSlots.swift in Sources */,
+				B47C5DFCE04F05484498E097 /* RadioWeather.swift in Sources */,
+				F273D29F0EDC669E30D2A4B4 /* RadioWidgetPresentation.swift in Sources */,
+				3E43C0B60E16EF603CF5ADB6 /* RecentListening.swift in Sources */,
+				897E86E0C831CD03C671A026 /* Station.swift in Sources */,
+				435A2BD4E516FEEB976E7E87 /* StreamResolver.swift in Sources */,
+				9CFB4A477D70000A7368006E /* WakeRadio.swift in Sources */,
+				B113E0F7E356ADE45EFFE546 /* WeatherWidgetPresentation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE6EB147F73E3105C372105B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A3A5DA9386E1280558BF635 /* BoardMaterials.swift in Sources */,
+				22E90BB364039320CEF6B78E /* BoardQuickMenu.swift in Sources */,
+				B6EACD9E4A9128CA18493199 /* CBSShortcuts.swift in Sources */,
+				DF2AFCDDFBF702B36484A846 /* ChannelSchedule.swift in Sources */,
+				2FB2D8D5D3750BD2FA65F50D /* ChessArena.swift in Sources */,
+				DCDD14C7FEC3D9EF5F18705A /* ChessCapture.swift in Sources */,
+				4A50248C93911C2EB166CDBB /* ChessGame.swift in Sources */,
+				C6CB25EBF8AF3544515F494B /* ChessHistory.swift in Sources */,
+				808003509A3F3325623E9308 /* ChessHistoryView.swift in Sources */,
+				E58FA74CD427C18493805038 /* ChessView.swift in Sources */,
+				DBCF9187C87E23A2E93077A4 /* ComputerOpponent.swift in Sources */,
+				85693F2ADDBD4B548889CCC5 /* ConnectionHealth.swift in Sources */,
+				C18D78FC0D2DFE24842E5F16 /* Design.swift in Sources */,
+				5406EC11AE14C9EEAEC11C10 /* DesignSystem.swift in Sources */,
+				33A2021562110C670A3ABBB5 /* DeviceSync.swift in Sources */,
+				CF8519CA6E548AF4323E757B /* FavoriteReorderDrop.swift in Sources */,
+				5953F9FEC2FDD45FC4A524B2 /* GameThemes.swift in Sources */,
+				BC844F70EF2ECBEF5CC8F653 /* GomokuBoard.swift in Sources */,
+				9F76F5EF3AD21A2305E8231B /* GomokuGame.swift in Sources */,
+				90BC80301D43640AD1949316 /* GomokuHistory.swift in Sources */,
+				BE925B605198A520FEB8BD86 /* GomokuHistoryView.swift in Sources */,
+				A7E6F3956B311848CC57A183 /* GomokuView.swift in Sources */,
+				DC0984691945B9F77CDFDD33 /* HapticGlassTuner.swift in Sources */,
+				AB8A939A3B5499C0F67218E8 /* LiquidRadioDesign.swift in Sources */,
+				67BD3558215793C2FA5B5FCF /* OnAirApp.swift in Sources */,
+				E9210B3AF79030EBB7E44229 /* OpponentSettings.swift in Sources */,
+				16D49B560C0C32DBC6E90DE0 /* PinchZoomCanvas.swift in Sources */,
+				4D6FCB051BC2B426EC08019C /* PlaybackIntents.swift in Sources */,
+				D99E30F1C0D85505249C3CD6 /* ProgramSchedule.swift in Sources */,
+				1F67E156DA8AD070BF4C2113 /* RadioActivity.swift in Sources */,
+				33114E32A76EDBD9B27150CD /* RadioControls.swift in Sources */,
+				79F0F69A8B533ED993F8C2EF /* RadioDiscoveryHero.swift in Sources */,
+				7C29C5F96425C138976F68F6 /* RadioExtras.swift in Sources */,
+				64CA6AA6F40451D23CB4CA33 /* RadioFeatures.swift in Sources */,
+				D397FDF58EB0A95D3BB8088D /* RadioHome.swift in Sources */,
+				73C4A864E217618F394BE081 /* RadioPanelPresentation.swift in Sources */,
+				9D787E1CC6C2D4E005B9E7B8 /* RadioPlayer.swift in Sources */,
+				B5A5CF935B255BF679EB78D1 /* RadioPresets.swift in Sources */,
+				0BE7B1FF9AE73AC002F38496 /* RadioQuickSlots.swift in Sources */,
+				0A4D6C477632CAD6287F38AB /* RadioShortcuts.swift in Sources */,
+				1CF5E13BD21D913C2B8CBFDA /* RadioStudioScreens.swift in Sources */,
+				35460F1C4C746CEA1C5B18F4 /* RadioWeather.swift in Sources */,
+				EBE90BD8B5126A8D781045FD /* RadioWeatherView.swift in Sources */,
+				CAD42DEA6DE03EF83F2E0392 /* RadioWidgetPresentation.swift in Sources */,
+				C279A7CF17AEE72C9C1ADA94 /* RecentListening.swift in Sources */,
+				0460245CFEFDD5F03C3AEF00 /* RemovedRadioFeatureCleanup.swift in Sources */,
+				5DB2794ED2F44A431CFA1EF3 /* SavedGameValidation.swift in Sources */,
+				1AF66F23FDC1ADA9A6B48FAB /* Station.swift in Sources */,
+				745F1B86095AA9E5B259F6D5 /* StreamResolver.swift in Sources */,
+				E2305964473FE7BEF45F2483 /* SudokuGame.swift in Sources */,
+				5EA4AB10F4E9B5F1CD23C2F9 /* SudokuView.swift in Sources */,
+				BF135B8E0F630A9BEAD67EDB /* WakeRadio.swift in Sources */,
+				8F044E1951ADF708D3E9EB76 /* WeatherDetailView.swift in Sources */,
+				52D7204BE44734FD29F19DC8 /* WeatherWidgetPresentation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDF1C3DA2B3772D02721F91C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9996415287A94BAD5B5F2436 /* LiquidRadioFlowTests.swift in Sources */,
+				FEBC7477DF8F1BAE3093E2C8 /* RadioExtrasFlowTests.swift in Sources */,
+				45749366531ECE06BC95FDA6 /* RadioFlowTests.swift in Sources */,
+				252AF0F9D3A3BBB275767B27 /* StudioRedesignFlowTests.swift in Sources */,
+				F4820AA69DA24ECEDDA977A0 /* WeatherRadioFlowTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7728264D1DC470001CAE1A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				269E3B3B24CEDC74DCFFC0FE /* CatalogTests.swift in Sources */,
+				F611735855BB9675CEDD31E5 /* FeatureTests.swift in Sources */,
+				C5271587F9EDDA5819F446FF /* ImportedRadioGamesTests.swift in Sources */,
+				7AEC9D70EC541A48E53324B1 /* RadioExperienceTests.swift in Sources */,
+				E1820605901C72632B2EF695 /* WeatherAndLineupTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB8BC6EDF9A91D337F9FE623 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5C1676DD5AD3092CA8EC730 /* CBSShortcuts.swift in Sources */,
+				BF76690F5AD7778E2B141FC2 /* ChannelSchedule.swift in Sources */,
+				6E1A7258CF395B55959F5E3E /* ConnectionHealth.swift in Sources */,
+				5731837601615F3D4435C134 /* Design.swift in Sources */,
+				FF733BAD499FCB45E0F480EC /* DeviceSync.swift in Sources */,
+				6F03B429EA2AAF0FDBB79F24 /* OnAirWatch.swift in Sources */,
+				53B7FE1B2BA0B3C2D292ECB6 /* PlaybackIntents.swift in Sources */,
+				7EA926B339C257AD1FA0BE16 /* ProgramSchedule.swift in Sources */,
+				96D58D60309AF87EAEC87388 /* RadioActivity.swift in Sources */,
+				AB986E8ADE6DF95CCA5EF6A0 /* RadioControls.swift in Sources */,
+				1D36F1EE00D09735949D19DA /* RadioPanelPresentation.swift in Sources */,
+				79EE19FC7396C0EB2B05DEB1 /* RadioPlayer.swift in Sources */,
+				75296C85D40BAEC5516FC256 /* RadioPresets.swift in Sources */,
+				DD57662FD3B316E42E4B7114 /* RadioQuickSlots.swift in Sources */,
+				9DDA85E7BBB249930C83D46B /* RadioWeather.swift in Sources */,
+				BD4509F8BF7E1502ADAF49C5 /* RadioWidgetPresentation.swift in Sources */,
+				C7C6E0763C8EDADF4947E444 /* RecentListening.swift in Sources */,
+				7F7A78AF8840546DB4FBCDC9 /* Station.swift in Sources */,
+				BD8D47B8F15ADBCA046A7856 /* StreamResolver.swift in Sources */,
+				9F4B7EBAC63A7107EA2EC69E /* WakeRadio.swift in Sources */,
+				CCEFED73EC2CE02465B426D1 /* WeatherWidgetPresentation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD2401209B89059A5EFA8810 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0D7C8F5D20848AAB73A3759 /* CBSShortcuts.swift in Sources */,
+				D564B37492CBDFAADB36CEC8 /* ChannelSchedule.swift in Sources */,
+				05F5A75650AC8062F9450191 /* ConnectionHealth.swift in Sources */,
+				2BF57CA4DF0C4977233ED10D /* Design.swift in Sources */,
+				A6BC34FEFCFBA9C732579159 /* DeviceSync.swift in Sources */,
+				F11578C4E64952C52649E1AC /* PlaybackIntents.swift in Sources */,
+				71DFBBD7D16C9FE33A1B486C /* ProgramSchedule.swift in Sources */,
+				15A29A7252A6F42A1A0D1705 /* RadioActivity.swift in Sources */,
+				C639F30E8CDE8C8EE646D90F /* RadioControls.swift in Sources */,
+				EF29658DCE7994956DA7D124 /* RadioPanelPresentation.swift in Sources */,
+				761A7F1272279440960BD4F7 /* RadioPlayer.swift in Sources */,
+				05D2A650D5E7DFF0C3A3307E /* RadioPresets.swift in Sources */,
+				79F115369E6754F324FFA1CA /* RadioQuickSlots.swift in Sources */,
+				605EF3934EC8454C1B4D492A /* RadioWeather.swift in Sources */,
+				E0C7B3D4C241E5E3A7E1C643 /* RadioWidgetPresentation.swift in Sources */,
+				4F7AE7B0246F1EA509766A97 /* RadioWidgets.swift in Sources */,
+				EBD3606B2A362647D0104020 /* RecentListening.swift in Sources */,
+				9F255378FA23BC8CBF1D0BB1 /* Station.swift in Sources */,
+				38DB7D6068E9F941A0DF7C53 /* StreamResolver.swift in Sources */,
+				FD61331364D0835B949A7534 /* WakeRadio.swift in Sources */,
+				BF929D1CFE00E9BEB451D6F6 /* WeatherRadioWidget.swift in Sources */,
+				EC59DCCD12E71890F7B32C64 /* WeatherWidgetPresentation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		05835338AD9BFC1D292F38BD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 184F785AACCE6D1F1954EF19 /* OnAirWidgets */;
+			targetProxy = 888EABA292D2FAAC94E86617 /* PBXContainerItemProxy */;
+		};
+		4699AFC33BBE955FB7E8D87C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4A0C0E8EE3DACB92961DEFBD /* OnAirWatch */;
+			targetProxy = CA7BCA6FC04D3156280689F3 /* PBXContainerItemProxy */;
+		};
+		6B198168E3521BEF05457A9D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C88E6A6D46C44B9DA3135F2A /* OnAirWatchWidgets */;
+			targetProxy = B1EDA5F872815674C3BC464F /* PBXContainerItemProxy */;
+		};
+		9A259F6EA7405EC23282101A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB92895451C54812613171EA /* OnAir */;
+			targetProxy = 830A75B471379B91924B4A0A /* PBXContainerItemProxy */;
+		};
+		A5096EEE3060EF5F82822FAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4A0C0E8EE3DACB92961DEFBD /* OnAirWatch */;
+			targetProxy = 96E6CCA0A996B7B5BE807E71 /* PBXContainerItemProxy */;
+		};
+		B093B62A3BEC317CDEB21658 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB92895451C54812613171EA /* OnAir */;
+			targetProxy = 7B5FB6FB52B5B4792EA6CCB1 /* PBXContainerItemProxy */;
+		};
+		C17B5AF93B43878208EDA9E2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 184F785AACCE6D1F1954EF19 /* OnAirWidgets */;
+			targetProxy = 67ABF7922F1A14F19D8ABDDA /* PBXContainerItemProxy */;
+		};
+		D48D46D2F97E45850FAE68E4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 184F785AACCE6D1F1954EF19 /* OnAirWidgets */;
+			targetProxy = E034AD8204600BA9BFE9FFB5 /* PBXContainerItemProxy */;
+		};
+		FD3C116B2B60C9A1F41EC252 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 184F785AACCE6D1F1954EF19 /* OnAirWidgets */;
+			targetProxy = A5558EE6A4C4D3CCAB5C68FD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		06D457680B8E600E4AAD8BAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = OnAir/Watch/OnAir.entitlements;
+				INFOPLIST_FILE = OnAir/Watch/Info.plist;
+				INFOPLIST_KEY_WKApplication = YES;
+				INFOPLIST_KEY_WKBackgroundModes = (
+					audio,
+				);
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = kr.davidkang.onair;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.davidkang.onair.watch;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+			};
+			name = Release;
+		};
+		111D21DC38B36307D9A2E84C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = OnAir/iOS/OnAir.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = OnAir/iOS/Info.plist;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				INFOPLIST_KEY_UIBackgroundModes = (
+					audio,
+				);
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kr.davidkang.onair;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		115BE4B9E55E617CF91D2FBE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kr.davidkang.onair.OnAirUITests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OnAir;
+			};
+			name = Debug;
+		};
+		1BCB09C440D1312CB1CF5094 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = OnAir/WatchWidgets/OnAir.entitlements;
+				INFOPLIST_FILE = OnAir/WatchWidgets/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kr.davidkang.onair.watch.widgets;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) WIDGET_EXTENSION";
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Release;
+		};
+		1C02047EA73F3F7070ED6718 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kr.davidkang.onair.OnAirTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OnAir.app/OnAir";
+			};
+			name = Release;
+		};
+		48D003CA006E33D684485979 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = OnAir/WatchWidgets/OnAir.entitlements;
+				INFOPLIST_FILE = OnAir/WatchWidgets/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kr.davidkang.onair.watch.widgets;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) WIDGET_EXTENSION";
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Debug;
+		};
+		619B697A309360158FC8F670 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = OnAir/iOS/OnAirCloud.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = OnAir/iOS/Info.plist;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				INFOPLIST_KEY_UIBackgroundModes = (
+					audio,
+				);
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kr.davidkang.onair;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) CLOUD_SYNC";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6B00368DD8649D031744FCC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = AXCMBMA992;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "온에어";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+				TVOS_DEPLOYMENT_TARGET = 26.0;
+				WATCHOS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Debug;
+		};
+		73F4A1BAB329A9F7DDE92B77 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = OnAir/iOS/OnAir.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = OnAir/iOS/Info.plist;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				INFOPLIST_KEY_UIBackgroundModes = (
+					audio,
+				);
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kr.davidkang.onair;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		7544CDDD631821FBD7BF2872 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kr.davidkang.onair.OnAirTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OnAir.app/OnAir";
+			};
+			name = Debug;
+		};
+		7AA3B47BDF2D7551EE79D15C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = AXCMBMA992;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "온에어";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+				TVOS_DEPLOYMENT_TARGET = 26.0;
+				WATCHOS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Release;
+		};
+		8CB7131A76876AC7E748FFC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = OnAir/Watch/OnAir.entitlements;
+				INFOPLIST_FILE = OnAir/Watch/Info.plist;
+				INFOPLIST_KEY_WKApplication = YES;
+				INFOPLIST_KEY_WKBackgroundModes = (
+					audio,
+				);
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = kr.davidkang.onair;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.davidkang.onair.watch;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+			};
+			name = Debug;
+		};
+		A3E337DC939287C145E55795 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = OnAir/TV/OnAir.entitlements;
+				INFOPLIST_FILE = OnAir/TV/Info.plist;
+				INFOPLIST_KEY_UIBackgroundModes = (
+					audio,
+				);
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kr.davidkang.onair.tv;
+				SDKROOT = appletvos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) CLOUD_SYNC";
+				TARGETED_DEVICE_FAMILY = 3;
+			};
+			name = Debug;
+		};
+		A849EDB94608F49508F9802A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = OnAir/TV/OnAir.entitlements;
+				INFOPLIST_FILE = OnAir/TV/Info.plist;
+				INFOPLIST_KEY_UIBackgroundModes = (
+					audio,
+				);
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kr.davidkang.onair.tv;
+				SDKROOT = appletvos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) CLOUD_SYNC";
+				TARGETED_DEVICE_FAMILY = 3;
+			};
+			name = Release;
+		};
+		A9B4B00F5220B59ECCF9B872 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = OnAir/iOS/OnAirCloud.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = OnAir/iOS/Info.plist;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				INFOPLIST_KEY_UIBackgroundModes = (
+					audio,
+				);
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kr.davidkang.onair;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) CLOUD_SYNC";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AC0378FFEE0AACCC98BF0C9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = OnAir/iOS/OnAirCloud.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = OnAir/iOS/Info.plist;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				INFOPLIST_KEY_UIBackgroundModes = (
+					audio,
+				);
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kr.davidkang.onair;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) CLOUD_SYNC";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AE4CFA98E39D8D8B7812E509 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = OnAir/iOS/OnAirCloud.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = OnAir/iOS/Info.plist;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				INFOPLIST_KEY_UIBackgroundModes = (
+					audio,
+				);
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kr.davidkang.onair;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) CLOUD_SYNC";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BBF9F92324DEF1C9BB64C905 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = OnAir/Widgets/OnAir.entitlements;
+				INFOPLIST_FILE = OnAir/Widgets/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kr.davidkang.onair.widgets;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) WIDGET_EXTENSION";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C1EFABF159880556CD7C3F19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = OnAir/iOS/OnAir.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = OnAir/iOS/Info.plist;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				INFOPLIST_KEY_UIBackgroundModes = (
+					audio,
+				);
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kr.davidkang.onair;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CB0CEEA6698343C10F19513F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = OnAir/Widgets/OnAir.entitlements;
+				INFOPLIST_FILE = OnAir/Widgets/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kr.davidkang.onair.widgets;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) WIDGET_EXTENSION";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DE0318BC6D1D7E36242A2FF1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kr.davidkang.onair.OnAirUITests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OnAir;
+			};
+			name = Release;
+		};
+		E04A639A870A2A44AEEF63B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = OnAir/iOS/OnAir.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = OnAir/iOS/Info.plist;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				INFOPLIST_KEY_UIBackgroundModes = (
+					audio,
+				);
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kr.davidkang.onair;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0A43ACE29C1094E65F8C2F61 /* Build configuration list for PBXNativeTarget "OnAirWithWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E04A639A870A2A44AEEF63B7 /* Debug */,
+				73F4A1BAB329A9F7DDE92B77 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		0E38892CE895F2F35A6BD6B1 /* Build configuration list for PBXNativeTarget "OnAirUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				115BE4B9E55E617CF91D2FBE /* Debug */,
+				DE0318BC6D1D7E36242A2FF1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		1E53D0BF978091AD0C751CD6 /* Build configuration list for PBXNativeTarget "OnAir" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				111D21DC38B36307D9A2E84C /* Debug */,
+				C1EFABF159880556CD7C3F19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		54281269E542C6ADB03CFC40 /* Build configuration list for PBXNativeTarget "OnAirCloudWithWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				619B697A309360158FC8F670 /* Debug */,
+				AC0378FFEE0AACCC98BF0C9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		6FD5801C13BDEF92D39C5931 /* Build configuration list for PBXNativeTarget "OnAirCloud" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9B4B00F5220B59ECCF9B872 /* Debug */,
+				AE4CFA98E39D8D8B7812E509 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9062D7FA217852BF173AC388 /* Build configuration list for PBXNativeTarget "OnAirTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7544CDDD631821FBD7BF2872 /* Debug */,
+				1C02047EA73F3F7070ED6718 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A9805D2F80497CA98F57110B /* Build configuration list for PBXNativeTarget "OnAirWatchWidgets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48D003CA006E33D684485979 /* Debug */,
+				1BCB09C440D1312CB1CF5094 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		ACC27EC668BD503C00487C8D /* Build configuration list for PBXNativeTarget "OnAirTV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A3E337DC939287C145E55795 /* Debug */,
+				A849EDB94608F49508F9802A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B3337C2F744BD97A5993D2FB /* Build configuration list for PBXNativeTarget "OnAirWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CB7131A76876AC7E748FFC1 /* Debug */,
+				06D457680B8E600E4AAD8BAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B3BBC3E9D4AB308EC7FDE1E9 /* Build configuration list for PBXProject "OnAir" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B00368DD8649D031744FCC8 /* Debug */,
+				7AA3B47BDF2D7551EE79D15C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E2F168D6E610A0CEBD2E1335 /* Build configuration list for PBXNativeTarget "OnAirWidgets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBF9F92324DEF1C9BB64C905 /* Debug */,
+				CB0CEEA6698343C10F19513F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BC5977AB2C7690558226D4A2 /* Project object */;
+}

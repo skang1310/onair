@@ -1,0 +1,277 @@
+name: OnAir
+options:
+  bundleIdPrefix: kr.davidkang.onair
+  deploymentTarget:
+    iOS: "26.0"
+    watchOS: "26.0"
+    tvOS: "26.0"
+settings:
+  configs:
+    Debug:
+      SWIFT_ACTIVE_COMPILATION_CONDITIONS: DEBUG
+  base:
+    SWIFT_VERSION: "6.0"
+    SWIFT_STRICT_CONCURRENCY: complete
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: 1
+    GENERATE_INFOPLIST_FILE: YES
+    INFOPLIST_KEY_CFBundleDisplayName: 온에어
+    CODE_SIGN_STYLE: Automatic
+    DEVELOPMENT_TEAM: AXCMBMA992
+targets:
+  OnAir:
+    type: application
+    platform: iOS
+    sources: [OnAir/Shared, OnAir/iOS, OnAir/Resources]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: kr.davidkang.onair
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        TARGETED_DEVICE_FAMILY: "1,2"
+        INFOPLIST_KEY_UIBackgroundModes: [audio]
+        INFOPLIST_KEY_NSSupportsLiveActivities: YES
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+    info:
+      path: OnAir/iOS/Info.plist
+      properties:
+        UIBackgroundModes: [audio]
+        NSLocationWhenInUseUsageDescription: 선택한 라디오와 함께 현재 지역의 날씨를 표시합니다. 지역을 직접 선택하면 위치 권한 없이 사용할 수 있습니다.
+        NSAlarmKitUsageDescription: 기상 알람을 설정하고 알람을 끈 뒤 선택한 라디오를 재생합니다.
+        CFBundleURLTypes:
+          - CFBundleURLSchemes: [onair]
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait, UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationLandscapeRight]
+        UISupportedInterfaceOrientations~ipad: [UIInterfaceOrientationPortrait, UIInterfaceOrientationPortraitUpsideDown, UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationLandscapeRight]
+        NSAppTransportSecurity:
+          NSAllowsArbitraryLoadsForMedia: true
+    entitlements:
+      path: OnAir/iOS/OnAir.entitlements
+      properties:
+        com.apple.security.application-groups: [group.kr.davidkang.onair]
+    dependencies:
+      - target: OnAirWidgets
+  OnAirCloud:
+    type: application
+    platform: iOS
+    sources: [OnAir/Shared, OnAir/iOS, OnAir/Resources]
+    settings:
+      base:
+        SWIFT_ACTIVE_COMPILATION_CONDITIONS: "$(inherited) CLOUD_SYNC"
+        PRODUCT_BUNDLE_IDENTIFIER: kr.davidkang.onair
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        TARGETED_DEVICE_FAMILY: "1,2"
+        INFOPLIST_KEY_UIBackgroundModes: [audio]
+        INFOPLIST_KEY_NSSupportsLiveActivities: YES
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+    info:
+      path: OnAir/iOS/Info.plist
+      properties:
+        UIBackgroundModes: [audio]
+        NSLocationWhenInUseUsageDescription: 선택한 라디오와 함께 현재 지역의 날씨를 표시합니다. 지역을 직접 선택하면 위치 권한 없이 사용할 수 있습니다.
+        NSAlarmKitUsageDescription: 기상 알람을 설정하고 알람을 끈 뒤 선택한 라디오를 재생합니다.
+        CFBundleURLTypes:
+          - CFBundleURLSchemes: [onair]
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait, UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationLandscapeRight]
+        UISupportedInterfaceOrientations~ipad: [UIInterfaceOrientationPortrait, UIInterfaceOrientationPortraitUpsideDown, UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationLandscapeRight]
+        NSAppTransportSecurity:
+          NSAllowsArbitraryLoadsForMedia: true
+    entitlements:
+      path: OnAir/iOS/OnAirCloud.entitlements
+      properties:
+        com.apple.developer.ubiquity-kvstore-identifier: "$(TeamIdentifierPrefix)kr.davidkang.onair"
+        com.apple.security.application-groups: [group.kr.davidkang.onair]
+    dependencies:
+      - target: OnAirWidgets
+  OnAirCloudWithWatch:
+    type: application
+    platform: iOS
+    sources: [OnAir/Shared, OnAir/iOS, OnAir/Resources]
+    settings:
+      base:
+        SWIFT_ACTIVE_COMPILATION_CONDITIONS: "$(inherited) CLOUD_SYNC"
+        PRODUCT_BUNDLE_IDENTIFIER: kr.davidkang.onair
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        TARGETED_DEVICE_FAMILY: "1,2"
+        INFOPLIST_KEY_UIBackgroundModes: [audio]
+        INFOPLIST_KEY_NSSupportsLiveActivities: YES
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+    info:
+      path: OnAir/iOS/Info.plist
+      properties:
+        UIBackgroundModes: [audio]
+        NSLocationWhenInUseUsageDescription: 선택한 라디오와 함께 현재 지역의 날씨를 표시합니다. 지역을 직접 선택하면 위치 권한 없이 사용할 수 있습니다.
+        NSAlarmKitUsageDescription: 기상 알람을 설정하고 알람을 끈 뒤 선택한 라디오를 재생합니다.
+        CFBundleURLTypes:
+          - CFBundleURLSchemes: [onair]
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait, UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationLandscapeRight]
+        UISupportedInterfaceOrientations~ipad: [UIInterfaceOrientationPortrait, UIInterfaceOrientationPortraitUpsideDown, UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationLandscapeRight]
+        NSAppTransportSecurity:
+          NSAllowsArbitraryLoadsForMedia: true
+    entitlements:
+      path: OnAir/iOS/OnAirCloud.entitlements
+      properties:
+        com.apple.developer.ubiquity-kvstore-identifier: "$(TeamIdentifierPrefix)kr.davidkang.onair"
+        com.apple.security.application-groups: [group.kr.davidkang.onair]
+    dependencies:
+      - target: OnAirWidgets
+      - target: OnAirWatch
+  OnAirWithWatch:
+    type: application
+    platform: iOS
+    sources: [OnAir/Shared, OnAir/iOS, OnAir/Resources]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: kr.davidkang.onair
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        TARGETED_DEVICE_FAMILY: "1,2"
+        INFOPLIST_KEY_UIBackgroundModes: [audio]
+        INFOPLIST_KEY_NSSupportsLiveActivities: YES
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+    info:
+      path: OnAir/iOS/Info.plist
+      properties:
+        UIBackgroundModes: [audio]
+        NSLocationWhenInUseUsageDescription: 선택한 라디오와 함께 현재 지역의 날씨를 표시합니다. 지역을 직접 선택하면 위치 권한 없이 사용할 수 있습니다.
+        NSAlarmKitUsageDescription: 기상 알람을 설정하고 알람을 끈 뒤 선택한 라디오를 재생합니다.
+        CFBundleURLTypes:
+          - CFBundleURLSchemes: [onair]
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait, UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationLandscapeRight]
+        UISupportedInterfaceOrientations~ipad: [UIInterfaceOrientationPortrait, UIInterfaceOrientationPortraitUpsideDown, UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationLandscapeRight]
+        NSAppTransportSecurity:
+          NSAllowsArbitraryLoadsForMedia: true
+    entitlements:
+      path: OnAir/iOS/OnAir.entitlements
+      properties:
+        com.apple.security.application-groups: [group.kr.davidkang.onair]
+    dependencies:
+      - target: OnAirWidgets
+      - target: OnAirWatch
+  OnAirWidgets:
+    type: app-extension
+    platform: iOS
+    sources: [OnAir/Shared, OnAir/Widgets, OnAir/Resources/Assets.xcassets]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: kr.davidkang.onair.widgets
+        APPLICATION_EXTENSION_API_ONLY: YES
+        SWIFT_ACTIVE_COMPILATION_CONDITIONS: "$(inherited) WIDGET_EXTENSION"
+        SKIP_INSTALL: YES
+    info:
+      path: OnAir/Widgets/Info.plist
+      properties:
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+    entitlements:
+      path: OnAir/Widgets/OnAir.entitlements
+      properties:
+        com.apple.security.application-groups: [group.kr.davidkang.onair]
+  OnAirWatch:
+    type: application
+    platform: watchOS
+    sources: [OnAir/Shared, OnAir/Watch, OnAir/Resources]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: kr.davidkang.onair.watch
+        INFOPLIST_KEY_WKCompanionAppBundleIdentifier: kr.davidkang.onair
+        INFOPLIST_KEY_WKApplication: YES
+        INFOPLIST_KEY_WKBackgroundModes: [audio]
+    info:
+      path: OnAir/Watch/Info.plist
+      properties:
+        UIBackgroundModes: [audio]
+        NSLocationWhenInUseUsageDescription: 선택한 라디오와 함께 현재 지역의 날씨를 표시합니다. 지역을 직접 선택하면 위치 권한 없이 사용할 수 있습니다.
+        NSAlarmKitUsageDescription: 기상 알람을 설정하고 알람을 끈 뒤 선택한 라디오를 재생합니다.
+        CFBundleURLTypes:
+          - CFBundleURLSchemes: [onair]
+        NSAppTransportSecurity:
+          NSAllowsArbitraryLoadsForMedia: true
+    entitlements:
+      path: OnAir/Watch/OnAir.entitlements
+      properties:
+        com.apple.security.application-groups: [group.kr.davidkang.onair]
+    dependencies:
+      - target: OnAirWatchWidgets
+  OnAirWatchWidgets:
+    type: app-extension
+    platform: watchOS
+    sources: [OnAir/Shared, OnAir/Widgets/RadioWidgets.swift, OnAir/Resources/Assets.xcassets]
+    settings:
+      base:
+        SDKROOT: watchos
+        SUPPORTED_PLATFORMS: "watchos watchsimulator"
+        WATCHOS_DEPLOYMENT_TARGET: "26.0"
+        PRODUCT_BUNDLE_IDENTIFIER: kr.davidkang.onair.watch.widgets
+        APPLICATION_EXTENSION_API_ONLY: YES
+        SWIFT_ACTIVE_COMPILATION_CONDITIONS: "$(inherited) WIDGET_EXTENSION"
+        SKIP_INSTALL: YES
+    info:
+      path: OnAir/WatchWidgets/Info.plist
+      properties:
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+    entitlements:
+      path: OnAir/WatchWidgets/OnAir.entitlements
+      properties:
+        com.apple.security.application-groups: [group.kr.davidkang.onair]
+  OnAirTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: [OnAirTests]
+    dependencies:
+      - target: OnAir
+  OnAirUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources: [OnAirUITests]
+    dependencies:
+      - target: OnAir
+  OnAirTV:
+    type: application
+    platform: tvOS
+    sources:
+      - OnAir/Shared
+      - OnAir/TV
+      - path: OnAir/Resources
+        excludes: [Assets.xcassets]
+    settings:
+      base:
+        SWIFT_ACTIVE_COMPILATION_CONDITIONS: "$(inherited) CLOUD_SYNC"
+        PRODUCT_BUNDLE_IDENTIFIER: kr.davidkang.onair.tv
+        INFOPLIST_KEY_UIBackgroundModes: [audio]
+    info:
+      path: OnAir/TV/Info.plist
+      properties:
+        NSAppTransportSecurity:
+          NSAllowsArbitraryLoadsForMedia: true
+    entitlements:
+      path: OnAir/TV/OnAir.entitlements
+      properties:
+        com.apple.developer.ubiquity-kvstore-identifier: "$(TeamIdentifierPrefix)kr.davidkang.onair"
+        com.apple.security.application-groups: [group.kr.davidkang.onair]
+schemes:
+  OnAir:
+    build:
+      targets:
+        OnAir: all
+    test:
+      targets: [OnAirTests, OnAirUITests]
+  OnAirWithWatch:
+    build:
+      targets:
+        OnAirWithWatch: all
+  OnAirWatch:
+    build:
+      targets:
+        OnAirWatch: all
+  OnAirTV:
+    build:
+      targets:
+        OnAirTV: all
+
+  OnAirCloud:
+    build:
+      targets:
+        OnAirCloud: all
+  OnAirCloudWithWatch:
+    build:
+      targets:
+        OnAirCloudWithWatch: all

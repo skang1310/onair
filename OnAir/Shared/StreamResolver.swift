@@ -12,6 +12,9 @@ enum StreamResolver {
         if let channel = sbs[station.catalogKey] { return URL(string: "https://apis.sbs.co.kr/play-api/1.0/livestream/\(channel)?protocol=hls&ssl=Y") }
         return nil
     }
+    static func kbsChannelCode(for station: Station) -> String? {
+        ["kbs1radio": "21", "kbs2r": "22", "kbs3r": "23", "kbsclassicfm": "24", "kbscoolfm": "25"][station.catalogKey]
+    }
     static func parseAddress(_ data: Data) throws -> URL {
         let text = String(decoding: data, as: UTF8.self).trimmingCharacters(in: .whitespacesAndNewlines)
         guard let url = URL(string: text), url.scheme == "https", let host = url.host,
@@ -25,8 +28,7 @@ enum StreamResolver {
             guard (response as? HTTPURLResponse)?.statusCode == 200 else { throw URLError(.badServerResponse) }
             return try parseAddress(data)
         }
-        let codes = ["KBS Cool FM": "25", "KBS Classic FM": "24", "KBS 1R": "21", "KBS 1Radio": "21", "KBS 2R": "22", "KBS 3R": "23"]
-        if let code = codes[station.name] {
+        if let code = kbsChannelCode(for: station) {
             let url = URL(string: "https://cfpwwwapi.kbs.co.kr/api/v1/landing/live/channel_code/\(code)")!
             var request = URLRequest(url: url); request.timeoutInterval = 12
             let (data, response) = try await URLSession.shared.data(for: request)

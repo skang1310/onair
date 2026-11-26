@@ -41,9 +41,15 @@ struct Station: Codable, Identifiable, Hashable, Sendable {
         guard let url = URL(string: homepage), ["https", "http"].contains(url.scheme?.lowercased() ?? "") else { return nil }
         return url
     }
+    /// Modio와 같은 지상파 5사 11개 공식 채널. 재생 직전에 방송사 공식 주소를 조회합니다.
+    static let terrestrialKeys: [String] = ["kbs1radio", "kbs2r", "kbsclassicfm", "kbscoolfm", "mbcstandard", "mbcfm4u", "sbspower", "sbslove", "ebsfm", "cbsstandard", "cbsmusic"]
+    var isTerrestrial: Bool { Self.terrestrialKeys.contains(catalogKey) }
+    func matches(_ filter: String) -> Bool { filter == "전체" || (filter == "지상파" ? isTerrestrial : category == filter) }
     var subtitle: String {
         if catalogKey == "cbsstandard" { return "뉴스·시사와 다양한 이야기 · 표준FM 98.1" }
         if catalogKey == "cbsmusic" { return "음악으로 채우는 하루 · 음악FM 93.9" }
+        if catalogKey == "ebsfm" { return "배움이 있는 라디오 · FM 104.5" }
+        if isTerrestrial { return (category == "뉴스·시사" ? "세상의 이야기" : category == "클래식" ? "마음에 여백을" : "음악과 이야기") + " · FM " + RadioFrequency.label(self) }
         if category == "뉴스·시사" { return "세상의 이야기 · 뉴스·시사" }
         if category == "클래식" { return "마음에 여백을 · 클래식" }
         if name.localizedCaseInsensitiveContains("kpop") || tags.lowercased().contains("k-pop") { return "오늘의 리듬 · K-POP" }
@@ -54,6 +60,10 @@ struct Station: Codable, Identifiable, Hashable, Sendable {
         if ["cbs표준fm", "cbsstandardfm", "cbs표준", "cbs981"].contains(compact) { return "cbsstandard" }
         if ["cbs음악fm", "cbsmusicfm", "cbs939"].contains(compact) { return "cbsmusic" }
         if ["kbs1r", "kbs1radio", "kbs1라디오"].contains(compact) { return "kbs1radio" }
+        if ["kbs2r", "kbs2radio", "kbs2라디오", "kbs해피fm"].contains(compact) { return "kbs2r" }
+        if ["kbsclassicfm", "kbs클래식fm", "kbs1fm"].contains(compact) { return "kbsclassicfm" }
+        if ["kbscoolfm", "kbs쿨fm", "kbs2fm"].contains(compact) { return "kbscoolfm" }
+        if ["ebsfm", "ebs라디오", "ebstunein", "ebstuneinforeignlanguages"].contains(compact) { return "ebsfm" }
         if ["mbcfm", "mbc표준fm", "mbcstandardfm"].contains(compact) { return "mbcstandard" }
         if ["mbcfm4u", "mbcfmforyou"].contains(compact) { return "mbcfm4u" }
         if compact == "mbc올댓뮤직" { return "mbcallthat" }
@@ -85,15 +95,20 @@ struct Station: Codable, Identifiable, Hashable, Sendable {
         guard category == "뉴스·시사" else { return nil }
         return ["부산", "대구", "대전", "광주", "울산", "제주", "경남", "경북", "전북", "전남", "충북", "충남", "강원", "춘천", "청주", "전주", "포항", "목포", "원주"].first { name.contains($0) }
     }
-    static let categories = ["전체", "뉴스·시사", "음악", "클래식"]
+    static let categories = ["전체", "지상파", "뉴스·시사", "음악", "클래식"]
     static let curated: [Station] = [
+        Station(stationuuid: "6d4a1b58-b7c6-11e9-acb2-52543be04c81", name: "KBS 1라디오", url_resolved: "https://1radio.gscdn.kbs.co.kr/1radio_192_4.m3u8", homepage: "https://radio.kbs.co.kr", tags: "news,talk", bitrate: 0),
+        Station(stationuuid: "kbs-2radio-live", name: "KBS 2라디오", url_resolved: "https://2radio-ad.gscdn.kbs.co.kr/2radio_ad_192_1.m3u8", homepage: "https://radio.kbs.co.kr", tags: "pop,talk", bitrate: 0),
+        Station(stationuuid: "c038a859-7be1-11e9-aa30-52543be04c81", name: "KBS 클래식FM", url_resolved: "https://1fm.gscdn.kbs.co.kr/1fm_192_2.m3u8", homepage: "https://radio.kbs.co.kr", tags: "classical", bitrate: 0),
+        Station(stationuuid: "5cfee8db-7be2-11e9-aa30-52543be04c81", name: "KBS 쿨FM", url_resolved: "https://2fm-ad.gscdn.kbs.co.kr/2fm_ad_192_1.m3u8", homepage: "https://radio.kbs.co.kr", tags: "music", bitrate: 0),
         Station(stationuuid: "mbc-standard-live", name: "MBC 표준FM", url_resolved: "https://minisw.imbc.com/dsfm/_definst_/sfm.stream/playlist.m3u8", homepage: "https://mini.imbc.com", tags: "news,talk", bitrate: 0),
         Station(stationuuid: "mbc-fm4u-live", name: "MBC FM4U", url_resolved: "https://minimw.imbc.com/dmfm/_definst_/mfm.stream/playlist.m3u8", homepage: "https://mini.imbc.com", tags: "music", bitrate: 0),
-        Station(stationuuid: "mbc-allthat-live", name: "MBC 올댓뮤직", url_resolved: "https://minicw.imbc.com/dchm/_definst_/chm.stream/playlist.m3u8", homepage: "https://mini.imbc.com", tags: "music", bitrate: 0),
         Station(stationuuid: "sbs-power-live", name: "SBS 파워FM", url_resolved: "https://radiolive.sbs.co.kr/powerpc/powerfm.stream/playlist.m3u8", homepage: "https://www.sbs.co.kr/radio", tags: "music", bitrate: 0),
         Station(stationuuid: "sbs-love-live", name: "SBS 러브FM", url_resolved: "https://radiolive.sbs.co.kr/lovepc/lovefm.stream/playlist.m3u8", homepage: "https://www.sbs.co.kr/radio", tags: "news,talk", bitrate: 0),
+        Station(stationuuid: "ebs-fm-live", name: "EBS FM", url_resolved: "https://ebsonair.ebs.co.kr/fmradiofamilypc/familypc1m/playlist.m3u8", homepage: "https://www.ebs.co.kr/radio", tags: "talk,education", bitrate: 0),
         Station(stationuuid: "cbs-standard-fm", name: "CBS 표준FM", url_resolved: "https://m-aac.cbs.co.kr/mweb_cbs981/_definst_/cbs981.stream/playlist.m3u8", homepage: "https://www.cbs.co.kr/radio", tags: "news,talk", bitrate: 0),
         Station(stationuuid: "3043d560-4358-4583-9e29-9fce6777a09c", name: "CBS 음악FM", url_resolved: "https://m-aac.cbs.co.kr/mweb_cbs939/_definst_/cbs939.stream/playlist.m3u8", homepage: "https://www.cbs.co.kr/radio", tags: "music", bitrate: 0),
+        Station(stationuuid: "mbc-allthat-live", name: "MBC 올댓뮤직", url_resolved: "https://minicw.imbc.com/dchm/_definst_/chm.stream/playlist.m3u8", homepage: "https://mini.imbc.com", tags: "music", bitrate: 0),
         Station(stationuuid: "10fbdfdd-2a6f-49fb-a035-8963c57f52e8", name: "YTN 라디오", url_resolved: "https://radiolive.ytn.co.kr/radio/_definst_/20211118_fmlive/playlist.m3u8", homepage: "https://radio.ytn.co.kr/", tags: "news,talk", bitrate: 0)
     ]
     var palette: Int { Int(name.utf8.reduce(0) { ($0 + Int($1)) % 4 }) }
@@ -186,6 +201,8 @@ enum SharedStore {
                     verified += batch.filter { ConnectionHealth.shared.results[$0.id]?.state == .reachable }
                 }
                 guard !verified.isEmpty else { throw URLError(.cannotLoadFromNetwork) }
+                // 지상파 공식 채널은 일시적인 점검 실패로 목록에서 빠지지 않게 항상 유지합니다.
+                verified = Self.clean(verified)
                 stations = verified; message = nil
                 if let encoded = try? JSONEncoder().encode(verified) { UserDefaults.standard.set(encoded, forKey: "verified-station-cache-v2") }
                 favorites = favorites.map { saved in verified.first(where: { $0.id == saved.id || $0.catalogKey == saved.catalogKey }) ?? saved }

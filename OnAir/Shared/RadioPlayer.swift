@@ -251,8 +251,43 @@ import UIKit
         #if canImport(WidgetKit)
         WidgetCenter.shared.reloadAllTimelines()
         #endif
+        updateNowPlayingInfo()
+        #if os(iOS) && !WIDGET_EXTENSION
+        trackSongs()
+        #endif
+    }
+    #if os(iOS) && !WIDGET_EXTENSION
+    private var songTask: Task<Void, Never>?
+    private var songStationKey: String?
+    /// 재생 중인 채널의 지금 나오는 곡을 40초마다 확인해 잠금화면·플레이어에 반영합니다.
+    private func trackSongs() {
+        guard let station, isPlaying || buffering, SongFeed.supports(station) else {
+            songTask?.cancel(); songTask = nil; songStationKey = nil; return
+        }
+        guard songStationKey != station.catalogKey else { return }
+        songStationKey = station.catalogKey
+        songTask?.cancel()
+        songTask = Task { [weak self] in
+            while !Task.isCancelled {
+                await NowPlayingSongs.shared.refresh(station, force: true)
+                guard !Task.isCancelled else { return }
+                self?.updateNowPlayingInfo()
+                try? await Task.sleep(for: .seconds(40))
+            }
+        }
+    }
+    #endif
+    private func updateNowPlayingInfo() {
         if let station {
             var info: [String: Any] = [MPMediaItemPropertyTitle: station.name, MPMediaItemPropertyArtist: "온에어 · 한국 라디오", MPNowPlayingInfoPropertyIsLiveStream: true, MPNowPlayingInfoPropertyPlaybackRate: isPlaying ? 1.0 : 0.0]
+            #if os(iOS) && !WIDGET_EXTENSION
+            if let song = NowPlayingSongs.shared.current(for: station) {
+                info[MPMediaItemPropertyTitle] = song.title
+                info[MPMediaItemPropertyArtist] = song.artist.isEmpty ? station.name : "\(song.artist) · \(station.name)"
+            } else if let program = ProgramSchedule.shared.current(for: station)?.title ?? NowPlayingSongs.shared.board(for: station)?.program {
+                info[MPMediaItemPropertyArtist] = program
+            }
+            #endif
             #if os(iOS)
             if nowPlayingArtworkKey != station.id {
                 // Bundle artwork works offline and stays available when the app is locked.

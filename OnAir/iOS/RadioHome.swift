@@ -120,7 +120,7 @@ struct RadioHome: View {
 
     private var filtered: [Station] {
         library.stations.filter {
-            (category == "전체" || $0.category == category) &&
+            $0.matches(category) &&
             (query.isEmpty || $0.name.localizedCaseInsensitiveContains(query) || RadioFrequency.label($0).contains(query))
         }
     }
@@ -497,7 +497,7 @@ struct NowPlaying: View {
                                             .foregroundStyle(LiquidRadioTheme.accent)
                                     }
                                 }
-                                Text(program?.title ?? "실시간 라디오")
+                                Text(program?.title ?? NowPlayingSongs.shared.board(for: station)?.program ?? "실시간 라디오")
                                     .font(.system(size: 22, weight: .semibold))
                                     .lineLimit(2)
                                     .multilineTextAlignment(.center)
@@ -507,6 +507,9 @@ struct NowPlaying: View {
                         RadioProgramSummary(station: station, compact: true)
                             .foregroundStyle(.secondary)
                             .padding(.top, 12)
+
+                        NowPlayingSongRow(station: station)
+                            .padding(.top, 10)
 
                         // 라이브 상태 인디케이터
                         HStack(spacing: 8) {

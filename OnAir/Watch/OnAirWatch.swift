@@ -41,7 +41,7 @@ struct WatchHome: View {
     }
     private var channels: [Station] {
         let source = favoritesOnly ? library.favorites : category == "뉴스·시사" ? library.newsStations : library.stations
-        return source.filter { category == "전체" || $0.category == category }
+        return source.filter { $0.matches(category) }
     }
     var body: some View {
         NavigationStack {

@@ -177,7 +177,7 @@ struct RadioExploreScreen: View {
     @Binding var query: String
     @Binding var category: String
     @State private var layoutGrid = false
-    private var filtered: [Station] { library.stations.filter { (category == "전체" || $0.category == category) && (query.isEmpty || $0.name.localizedCaseInsensitiveContains(query) || RadioFrequency.label($0).contains(query)) } }
+    private var filtered: [Station] { library.stations.filter { $0.matches(category) && (query.isEmpty || $0.name.localizedCaseInsensitiveContains(query) || RadioFrequency.label($0).contains(query)) } }
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {

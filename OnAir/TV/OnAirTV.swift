@@ -35,7 +35,7 @@ struct TVHome: View {
                     }.pickerStyle(.segmented)
                     Text(onlyFavorites ? "내가 좋아하는 주파수" : "오늘의 방송국").font(.title2.bold())
                     LazyVGrid(columns: [GridItem(.adaptive(minimum: 240), spacing: 36)], spacing: 40) {
-                        ForEach((onlyFavorites ? library.favorites : category == "뉴스·시사" ? library.newsStations : library.stations).filter { category == "전체" || $0.category == category }) { station in
+                        ForEach((onlyFavorites ? library.favorites : category == "뉴스·시사" ? library.newsStations : library.stations).filter { $0.matches(category) }) { station in
                             Button { player.play(station) } label: {
                                 VStack(alignment: .leading, spacing: 14) { StationArtwork(station: station).frame(width: 235, height: 235); Text(station.name).font(.headline).lineLimit(1); Text(station.category).font(.caption).foregroundStyle(.secondary) }.padding(14)
                             }.buttonStyle(.card)

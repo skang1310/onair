@@ -189,3 +189,91 @@ struct RadioWidgetPreview: View {
     }
 }
 #endif
+
+/// 플레이어의 '지금 나오는 곡' 한 줄. 누르면 오늘 이 프로그램의 선곡표를 엽니다.
+struct NowPlayingSongRow: View {
+    let station: Station
+    @State private var showList = false
+    private var songs: NowPlayingSongs { .shared }
+    var body: some View {
+        if SongFeed.supports(station) {
+            TimelineView(.periodic(from: .now, by: 20)) { context in
+                let board = songs.board(for: station)
+                let current = board?.current(at: context.date)
+                Button { showList = true } label: {
+                    HStack(spacing: 8) {
+                        Image(systemName: current == nil ? "music.note.list" : "music.note")
+                            .font(.footnote.weight(.semibold))
+                            .foregroundStyle(LiquidRadioTheme.accent)
+                            .symbolEffect(.variableColor.iterative, isActive: current != nil && RadioPlayer.shared.isPlaying)
+                        if let current {
+                            Text(current.title).fontWeight(.semibold).lineLimit(1)
+                            if !current.artist.isEmpty { Text(current.artist).foregroundStyle(.secondary).lineLimit(1) }
+                        } else {
+                            Text(board == nil ? "곡 정보를 불러오는 중" : (board?.songs.isEmpty == false ? "지금은 이야기 중 · 선곡표 보기" : "선곡표 보기"))
+                                .foregroundStyle(.secondary)
+                        }
+                        Image(systemName: "chevron.right").font(.caption2.weight(.bold)).foregroundStyle(.tertiary)
+                    }
+                    .font(.subheadline)
+                    .padding(.horizontal, 14).padding(.vertical, 8)
+                    .glassEffect(.regular, in: .capsule)
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel(current.map { "지금 나오는 곡, \($0.title), \($0.artist). 선곡표 열기" } ?? "선곡표 열기")
+            }
+            .task(id: station.catalogKey) { await songs.refresh(station) }
+            .sheet(isPresented: $showList) { SongListSheet(station: station).presentationDetents([.medium, .large]) }
+        }
+    }
+}
+
+struct SongListSheet: View {
+    let station: Station
+    @Environment(\.dismiss) private var dismiss
+    private var songs: NowPlayingSongs { .shared }
+    private static let clock: DateFormatter = {
+        let f = DateFormatter(); f.locale = Locale(identifier: "ko_KR"); f.timeZone = TimeZone(identifier: "Asia/Seoul"); f.dateFormat = "a h:mm"; return f
+    }()
+    var body: some View {
+        NavigationStack {
+            let board = songs.board(for: station)
+            List {
+                if let board, !board.songs.isEmpty {
+                    let current = board.current()
+                    Section {
+                        ForEach(board.songs) { song in
+                            HStack(spacing: 12) {
+                                AsyncImage(url: song.albumImage) { image in image.resizable().scaledToFill() } placeholder: {
+                                    Image(systemName: "music.note").foregroundStyle(.secondary).frame(maxWidth: .infinity, maxHeight: .infinity).background(.quaternary)
+                                }
+                                .frame(width: 44, height: 44).clipShape(.rect(cornerRadius: 8))
+                                VStack(alignment: .leading, spacing: 2) {
+                                    Text(song.title).font(.body.weight(song == current ? .semibold : .regular)).lineLimit(2)
+                                    if !song.artist.isEmpty { Text(song.artist).font(.subheadline).foregroundStyle(.secondary).lineLimit(1) }
+                                }
+                                Spacer(minLength: 8)
+                                if song == current { Text("지금").font(.caption.weight(.bold)).foregroundStyle(LiquidRadioTheme.accent) }
+                                else if let played = song.playedAt { Text(Self.clock.string(from: played)).font(.caption).monospacedDigit().foregroundStyle(.secondary) }
+                            }
+                            .accessibilityElement(children: .combine)
+                        }
+                    } header: {
+                        Text(board.program.map { "\($0) · 오늘 선곡" } ?? "오늘 선곡")
+                    } footer: {
+                        Text("방송사 공개 선곡 정보를 표시합니다. 실제 방송과 조금 다를 수 있어요.")
+                    }
+                } else if songs.loading.contains(station.catalogKey) || board == nil {
+                    HStack { Spacer(); ProgressView(); Spacer() }.listRowBackground(Color.clear)
+                } else {
+                    ContentUnavailableView("아직 선곡 정보가 없어요", systemImage: "music.note.list", description: Text("이야기·뉴스 프로그램이거나 방송사가 선곡을 아직 올리지 않았어요."))
+                }
+            }
+            .navigationTitle(station.name + " 선곡표")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar { ToolbarItem(placement: .confirmationAction) { Button("닫기") { dismiss() } } }
+            .refreshable { await songs.refresh(station, force: true) }
+            .task { await songs.refresh(station) }
+        }
+    }
+}

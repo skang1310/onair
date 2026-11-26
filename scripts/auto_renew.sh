@@ -6,7 +6,7 @@ set -e
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Xcode.app/Contents/Developer/usr/bin:$PATH"
 
-PROJECT_DIR="/Users/davidkang/onair"
+PROJECT_DIR="$HOME/onair"
 DEVICE_ID="00008160-001430CC1021400A"
 BUNDLE_ID="kr.davidkang.onair"
 SCHEME="OnAir"

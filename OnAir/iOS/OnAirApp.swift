@@ -3,11 +3,17 @@ import AppIntents
 import UserNotifications
 
 @main struct OnAirApp: App {
-    @AppStorage("appearance") private var appearance = "system"
+    @AppStorage("appearance") private var appearance = "dark"
     private var selectedScheme: ColorScheme? { appearance == "dark" ? .dark : appearance == "light" ? .light : nil }
     @State private var library = StationLibrary()
     @Environment(\.scenePhase) private var scenePhase
     init() {
+        // 2026-11 리디자인: 다크 OLED가 기본. 예전 기본값(system)을 쓰던 사용자는 한 번만 다크로 옮깁니다.
+        let defaults = UserDefaults.standard
+        if !defaults.bool(forKey: "appearance-dark-default-v1") {
+            if (defaults.string(forKey: "appearance") ?? "system") == "system" { defaults.set("dark", forKey: "appearance") }
+            defaults.set(true, forKey: "appearance-dark-default-v1")
+        }
         #if DEBUG
         if ProcessInfo.processInfo.arguments.contains("--reset-radio-games") {
             for key in ["saved.chess", "saved.gomoku", "saved.sudoku"] { UserDefaults.standard.removeObject(forKey: key) }

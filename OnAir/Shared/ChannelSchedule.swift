@@ -165,6 +165,7 @@ enum SongFeed {
     static func clean(_ text: String) -> String {
         var value = text
         for (entity, plain) in [("&amp;", "&"), ("&lt;", "<"), ("&gt;", ">"), ("&quot;", "\""), ("&#39;", "'"), ("&apos;", "'")] { value = value.replacingOccurrences(of: entity, with: plain) }
+        value = value.replacingOccurrences(of: "Ψ", with: ", ") // KBS는 여러 가수를 Ψ로 이어 보냅니다
         return value.trimmingCharacters(in: .whitespacesAndNewlines)
     }
 

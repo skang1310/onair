@@ -1,7 +1,25 @@
 import SwiftUI
 
+/// ui-ux-pro-max 디자인 시스템(Dark Mode OLED · music streaming)에서 가져온 색 토큰.
+/// 다크: background #0F0F23 · card #1B1B30 · muted #27273B · muted-fg #94A3B8 · border #312E81
+/// primary #1E1B4B · secondary #4338CA · accent(재생/방송 중) = 스튜디오 "ON AIR" 램프 #FF6B3D · on-accent #1A0A05
+enum OnAirTokens {
+    static func hex(_ value: UInt32) -> Color { Color(red: Double((value >> 16) & 0xFF) / 255, green: Double((value >> 8) & 0xFF) / 255, blue: Double(value & 0xFF) / 255) }
+    private static func dynamic(dark: UInt32, light: UInt32) -> Color {
+        Color(uiColor: UIColor { $0.userInterfaceStyle == .dark ? UIColor(hex(dark)) : UIColor(hex(light)) })
+    }
+    static let background = dynamic(dark: 0x0F0F23, light: 0xF6F6FB)
+    static let card = dynamic(dark: 0x1B1B30, light: 0xFFFFFF)
+    static let muted = dynamic(dark: 0x27273B, light: 0xECECF4)
+    static let mutedForeground = dynamic(dark: 0x94A3B8, light: 0x55607A)
+    static let border = dynamic(dark: 0x312E81, light: 0xD9D8EE)
+    static let secondary = hex(0x4338CA)
+    static let accent = dynamic(dark: 0xFF6B3D, light: 0xC2410C)
+    static let onAccent = dynamic(dark: 0x1A0A05, light: 0xFFFFFF)
+}
+
 enum LiquidRadioTheme {
-    static let accent = Color(red: 1, green: 0.43, blue: 0.08)
+    static let accent = OnAirTokens.accent
     static func colors(_ palette: Int) -> [Color] {
         switch palette % 4 {
         case 0: [Color(red: 0.51, green: 0.38, blue: 0.87), Color(red: 0.24, green: 0.29, blue: 0.63)]
@@ -14,8 +32,7 @@ enum LiquidRadioTheme {
 struct LiquidRadioBackground: View {
     @Environment(\.colorScheme) private var scheme
     var body: some View {
-        Color(uiColor: scheme == .dark ? .systemBackground : UIColor(red: 0.97, green: 0.965, blue: 0.95, alpha: 1))
-            .ignoresSafeArea().accessibilityHidden(true)
+        OnAirTokens.background.ignoresSafeArea().accessibilityHidden(true)
     }
 }
 struct LiquidStationMark: View {

@@ -54,7 +54,7 @@ if [ -z "$DEVICE_STATUS" ]; then
     exit 0
 fi
 
-if ! echo "$DEVICE_STATUS" | grep -Eq "connected|available"; then
+if ! echo "$DEVICE_STATUS" | grep -Ewq "connected|available"; then
     log "기기가 오프라인 상태입니다. 다음 주기에 다시 시도합니다."
     log "==== 검사 완료 ===="
     exit 0

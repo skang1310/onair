@@ -29,6 +29,8 @@
 	<string>1</string>
 	<key>NSAlarmKitUsageDescription</key>
 	<string>기상 알람을 설정하고 알람을 끈 뒤 선택한 라디오를 재생합니다.</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>라디오에서 나온 곡을 Apple Music 보관함의 플레이리스트로 만듭니다.</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoadsForMedia</key>

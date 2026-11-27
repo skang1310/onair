@@ -7,12 +7,7 @@ struct RadioHome: View {
     @Bindable var library: StationLibrary
     @Environment(\.scenePhase) private var scenePhase
     @State private var player = RadioPlayer.shared
-    @State private var recent = RecentListening.shared
-    @State private var presets = RadioPresets.shared
     @State private var selection = 0
-    @State private var draggingFavorite: String?
-    @State private var query = ""
-    @State private var category = "전체"
     @State private var showPlayer = false
     @State private var showAirPlay = false
     @State private var showWeatherWidget = false
@@ -22,19 +17,20 @@ struct RadioHome: View {
 
     var body: some View {
         TabView(selection: $selection) {
-            Tab("라디오", systemImage: "radio.fill", value: 0) {
-                NavigationStack {
-                    RadioDashboard(library: library, openPlayer: { showPlayer = true }, openSettings: { showSettings = true }, explore: { value in category = value; selection = 1 }, openGames: { selection = 3 })
-                }
+            Tab("라디오", systemImage: "radio", value: 0) {
+                NavigationStack { LiveChannelsScreen(library: library, openPlayer: { showPlayer = true }) }
             }
-            Tab("탐색", systemImage: "safari", value: 1) {
-                NavigationStack { RadioExploreScreen(library: library, query: $query, category: $category) }
+            Tab("편성표", systemImage: "list.bullet.rectangle", value: 1) {
+                NavigationStack { ScheduleTabScreen(library: library) }
             }
-            Tab("플레이", systemImage: "square.grid.2x2", value: 3) {
-                NavigationStack { RadioGamesScreen() }
+            Tab("게임", systemImage: "die.face.5", value: 3) {
+                NavigationStack { GamesTabScreen() }
             }
-            Tab("보관함", systemImage: "heart", value: 2) {
-                NavigationStack { RadioCollectionScreen(library: library, openSettings: { showSettings = true }) }
+            Tab("보관함", systemImage: "tray.full", value: 2) {
+                NavigationStack { MyRadioScreen(library: library, openPlayer: { showPlayer = true }) }
+            }
+            Tab(value: 9, role: .search) {
+                RadioSearchSheet(library: library, openPlayer: { showPlayer = true }, inTab: true)
             }
         }
         .tint(LiquidRadioTheme.accent)
@@ -91,22 +87,20 @@ struct RadioHome: View {
         .onAppear {
             let args = ProcessInfo.processInfo.arguments
             if args.contains("-showPlayer") { showPlayer = true }
-            if args.contains("-showNews") { category = "뉴스·시사"; selection = 1 }
-            if args.contains("-showFavorites") { selection = 2 }
-            if args.contains("-showStations") { selection = 1 }
+            if args.contains("-showFavorites") || args.contains("-showLibrary") { selection = 2 }
             if args.contains("-showGames") { selection = 3 }
-            if args.contains("-showLibrary") { selection = 2 }
-            if args.contains("-showSchedule") { showSchedule = true }
+            if args.contains("-showStations") || args.contains("-showNews") { selection = 0 }
+            if args.contains("-showSchedule") { selection = 1 }
             if args.contains("-showWeather") { showWeather = true }
             if args.contains("-showWeatherWidget") { showWeatherWidget = true }
+            if let i = args.firstIndex(of: "-tab"), i + 1 < args.count, let value = Int(args[i + 1]) { selection = value }
         }
         #endif
         .onOpenURL { url in
             if url.host == "player" || url.host == "play" { showPlayer = true }
             else if url.host == "weather" { showWeather = true }
-            else if url.host == "stations" { selection = 1 }
-            else if url.host == "news" { category = "뉴스·시사"; selection = 1 }
-            else if url.host == "favorites" { selection = 2 }
+            else if url.host == "stations" || url.host == "news" || url.host == "favorites" { selection = 0 }
+            else if url.host == "schedule" { selection = 1 }
         }
         .onChange(of: scenePhase) { _, phase in
             if phase == .active { Task { await RadioWeatherModel.shared.refresh(); await ProgramSchedule.shared.refresh() } }
@@ -117,256 +111,14 @@ struct RadioHome: View {
             Button("확인") { player.error = nil }
         } message: { Text(player.error ?? "") }
     }
-
-    private var filtered: [Station] {
-        library.stations.filter {
-            $0.matches(category) &&
-            (query.isEmpty || $0.name.localizedCaseInsensitiveContains(query) || RadioFrequency.label($0).contains(query))
-        }
-    }
-
-    private func openStation(_ station: Station) {
-        if player.station?.id != station.id || (!player.isPlaying && !player.buffering) {
-            player.play(station)
-        }
-        showPlayer = true
-    }
-
-    private func card(_ station: Station) -> some View {
-        LiquidStationCard(
-            station: station,
-            favorite: library.favorites.contains { $0.catalogKey == station.catalogKey },
-            playing: player.station?.catalogKey == station.catalogKey && (player.isPlaying || player.buffering),
-            play: { openStation(station) },
-            toggleFavorite: { library.toggle(station) }
-        )
-        .contextMenu {
-            Button("방송 연결 확인", systemImage: "antenna.radiowaves.left.and.right") {
-                Task { await ConnectionHealth.shared.check(station, force: true) }
-            }
-        }
-    }
-
-    private func favoriteCard(_ station: Station) -> some View {
-        card(station)
-            .onDrag {
-                draggingFavorite = station.catalogKey
-                return NSItemProvider(object: station.catalogKey as NSString)
-            }
-            .onDrop(of: [UTType.text], delegate: FavoriteReorderDrop(target: station.catalogKey, dragging: $draggingFavorite, library: library))
-            .accessibilityAction(named: "위로 이동") { library.shiftFavorite(station.catalogKey, offset: -1) }
-            .accessibilityAction(named: "아래로 이동") { library.shiftFavorite(station.catalogKey, offset: 1) }
-    }
-
-    private var routineCards: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 12) {
-                ForEach(presets.values) { preset in
-                    Button {
-                        presets.play(preset)
-                        showPlayer = true
-                    } label: {
-                        VStack(alignment: .leading, spacing: 10) {
-                            Image(systemName: preset.kind.icon).font(.title2).foregroundStyle(LiquidRadioTheme.accent)
-                            Text(preset.kind.title).font(.headline)
-                            Text(preset.station.name).font(.caption).lineLimit(1).foregroundStyle(.secondary)
-                        }
-                        .foregroundStyle(.primary)
-                        .frame(width: 140, alignment: .leading)
-                        .padding(16)
-                        .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 16))
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 16)
-                                .stroke(Color.white.opacity(0.12), lineWidth: 1)
-                        )
-                    }
-                    .buttonStyle(.plain)
-                    .accessibilityLabel("\(preset.kind.title) · \(preset.station.name) 재생")
-                }
-            }
-            .padding(.vertical, 2)
-        }
-    }
-
-    private func libraryLink(_ title: String, subtitle: String, icon: String) -> some View {
-        HStack(spacing: 14) {
-            Image(systemName: icon)
-                .foregroundStyle(LiquidRadioTheme.accent)
-                .frame(width: 28)
-            VStack(alignment: .leading, spacing: 4) {
-                Text(title).font(.subheadline.bold())
-                Text(subtitle).font(.caption).foregroundStyle(.secondary)
-            }
-            Spacer()
-            Image(systemName: "chevron.right").font(.caption).foregroundStyle(.tertiary)
-        }
-        .foregroundStyle(.primary)
-        .padding(.vertical, 16)
-    }
-}
-
-// MARK: - Now Playing Compact Glass Card (홈 화면용 리퀴드 글래스 플로팅 카드)
-struct NowPlayingCompactCard: View {
-    let station: Station
-    @Bindable var player: RadioPlayer
-    let isFavorite: Bool
-    let toggleFavorite: () -> Void
-    let openPlayer: () -> Void
-
-    var body: some View {
-        VStack(spacing: 14) {
-            HStack(spacing: 14) {
-                // 방송국 로고 마크
-                Button(action: openPlayer) {
-                    LiquidStationMark(station: station, size: 54)
-                }
-                .buttonStyle(.plain)
-
-                // 곡명 & 프로그램 정보
-                Button(action: openPlayer) {
-                    VStack(alignment: .leading, spacing: 4) {
-                        HStack(spacing: 6) {
-                            Text(station.name)
-                                .font(.headline)
-                                .lineLimit(1)
-                            if let freq = RadioFrequency.values[station.catalogKey] {
-                                Text(String(format: "%.1f", freq))
-                                    .font(.system(size: 11, weight: .bold, design: .monospaced))
-                                    .foregroundStyle(LiquidRadioTheme.accent)
-                                    .padding(.horizontal, 6)
-                                    .padding(.vertical, 2)
-                                    .background(LiquidRadioTheme.accent.opacity(0.12), in: Capsule())
-                            }
-                        }
-                        TimelineView(.periodic(from: .now, by: 30)) { context in
-                            let program = ProgramSchedule.shared.current(for: station, at: context.date)
-                            Text(program?.title ?? station.subtitle)
-                                .font(.caption)
-                                .foregroundStyle(.secondary)
-                                .lineLimit(1)
-                        }
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                }
-                .buttonStyle(.plain)
-
-                // 즐겨찾기 하트 버튼
-                Button(action: toggleFavorite) {
-                    Image(systemName: isFavorite ? "heart.fill" : "heart")
-                        .font(.system(size: 18))
-                        .foregroundStyle(isFavorite ? LiquidRadioTheme.accent : .secondary)
-                        .frame(width: 40, height: 40)
-                }
-                .buttonStyle(.plain)
-            }
-
-            // 하단 컨트롤: 연결 상태 & 큰 재생 버튼
-            HStack {
-                HStack(spacing: 6) {
-                    Circle()
-                        .fill(player.isPlaying ? Color.green : Color.orange)
-                        .frame(width: 6, height: 6)
-                    Text(player.connectionLabel)
-                        .font(.caption2)
-                        .foregroundStyle(.secondary)
-                }
-
-                Spacer()
-
-                Button {
-                    player.toggle()
-                } label: {
-                    HStack(spacing: 8) {
-                        if player.buffering {
-                            ProgressView().tint(.white).frame(width: 14, height: 14)
-                        } else {
-                            Image(systemName: player.isPlaying ? "pause.fill" : "play.fill")
-                                .font(.system(size: 13, weight: .bold))
-                        }
-                        Text(player.isPlaying ? "일시정지" : "재생하기")
-                            .font(.system(size: 12, weight: .bold))
-                    }
-                    .foregroundStyle(.white)
-                    .padding(.horizontal, 16)
-                    .padding(.vertical, 8)
-                    .background(LiquidRadioTheme.accent, in: Capsule())
-                    .shadow(color: LiquidRadioTheme.accent.opacity(0.4), radius: 8, y: 3)
-                }
-                .buttonStyle(.plain)
-            }
-            .padding(.top, 2)
-        }
-        .padding(16)
-        .background(
-            RoundedRectangle(cornerRadius: 24)
-                .fill(.ultraThinMaterial)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 24)
-                        .stroke(
-                            LinearGradient(
-                                colors: [Color.white.opacity(0.25), Color.white.opacity(0.05)],
-                                startPoint: .topLeading,
-                                endPoint: .bottomTrailing
-                            ),
-                            lineWidth: 1
-                        )
-                )
-        )
-        .shadow(color: .black.opacity(0.08), radius: 15, y: 6)
-    }
-}
-
-// MARK: - Quick Favorite Chip (가로형 글래스 칩)
-struct QuickFavoriteChip: View {
-    let station: Station
-    let isPlaying: Bool
-    let action: () -> Void
-
-    var body: some View {
-        Button(action: action) {
-            HStack(spacing: 8) {
-                LiquidStationMark(station: station, size: 30)
-                VStack(alignment: .leading, spacing: 1) {
-                    Text(station.name)
-                        .font(.system(size: 12, weight: .semibold))
-                        .lineLimit(1)
-                    if let freq = RadioFrequency.values[station.catalogKey] {
-                        Text(String(format: "%.1f", freq))
-                            .font(.system(size: 10, weight: .bold, design: .monospaced))
-                            .foregroundStyle(LiquidRadioTheme.accent)
-                    }
-                }
-                if isPlaying {
-                    Image(systemName: "waveform")
-                        .font(.system(size: 11))
-                        .foregroundStyle(LiquidRadioTheme.accent)
-                }
-            }
-            .padding(.leading, 6)
-            .padding(.trailing, 14)
-            .padding(.vertical, 6)
-            .background(
-                isPlaying ? LiquidRadioTheme.accent.opacity(0.12) : Color.primary.opacity(0.04),
-                in: Capsule()
-            )
-            .overlay(
-                Capsule()
-                    .stroke(
-                        isPlaying ? LiquidRadioTheme.accent.opacity(0.5) : Color.white.opacity(0.12),
-                        lineWidth: 1
-                    )
-            )
-        }
-        .buttonStyle(.plain)
-    }
 }
 
 struct RadioPreferencesView: View {
-    @AppStorage("appearance") private var appearance = "system"
+    @AppStorage("appearance") private var appearance = "dark"
     @State private var recent = RecentListening.shared
     var body: some View {
         Form {
-            Section("화면") { Picker("화면 모드", selection: $appearance) { Text("시스템 설정").tag("system"); Text("라이트 모드").tag("light"); Text("다크 모드").tag("dark") }.accessibilityIdentifier("appearance-picker") }
+            Section("화면") { Picker("화면 모드", selection: $appearance) { Text("다크 (추천)").tag("dark"); Text("라이트").tag("light"); Text("시스템 설정 따르기").tag("system") }.accessibilityIdentifier("appearance-picker") }
             Section("날씨") { NavigationLink("날씨와 지역", destination: WeatherSettingsView()) }
             Section("시스템과 기기") {
                 Label(DeviceSync.shared.message, systemImage: "icloud")
@@ -395,11 +147,19 @@ struct MiniRadioPlayer: View {
                     if placement != .inline {
                         LiquidStationMark(station: station, size: 40)
                     }
-                    VStack(alignment: .leading, spacing: 3) {
-                        Text(station.name).font(.subheadline.weight(.semibold)).lineLimit(1)
-                        if placement != .inline {
-                            Text(player.connectionLabel)
-                                .font(.caption).foregroundStyle(.secondary).lineLimit(1)
+                    TimelineView(.periodic(from: .now, by: 20)) { context in
+                        let line = player.isPlaying ? channelNowLine(station, at: context.date) : nil
+                        VStack(alignment: .leading, spacing: 2) {
+                            if placement != .inline {
+                                HStack(spacing: 5) {
+                                    if RadioFrequency.label(station) != "LIVE" {
+                                        Text(RadioFrequency.label(station)).font(.system(.caption, design: .rounded).weight(.semibold)).monospacedDigit().foregroundStyle(LiquidRadioTheme.accent)
+                                    }
+                                    Text(station.name).font(.caption.weight(.medium)).foregroundStyle(.secondary).lineLimit(1)
+                                }
+                            }
+                            Text(placement == .inline ? (line ?? station.name) : (line ?? player.connectionLabel))
+                                .font(.subheadline.weight(.semibold)).lineLimit(1)
                         }
                     }
                 }.frame(maxWidth: .infinity, alignment: .leading).contentShape(Rectangle())
@@ -419,7 +179,7 @@ struct MiniRadioPlayer: View {
 }
 
 struct NowPlaying: View {
-    @AppStorage("appearance") private var appearance = "system"
+    @AppStorage("appearance") private var appearance = "dark"
     @State private var showSchedule = false
     @State private var showStations = false
     @Bindable var library: StationLibrary
@@ -535,13 +295,13 @@ struct NowPlaying: View {
                             Button { player.toggle() } label: {
                                 Group {
                                     if player.buffering {
-                                        ProgressView().tint(.white)
+                                        ProgressView().tint(OnAirTokens.onAccent)
                                     } else {
                                         Image(systemName: player.isPlaying ? "pause.fill" : "play.fill")
                                             .font(.system(size: 25, weight: .semibold))
                                     }
                                 }
-                                .foregroundStyle(.white)
+                                .foregroundStyle(OnAirTokens.onAccent)
                                 .frame(width: 64, height: 64)
                             }
                             .buttonStyle(.glassProminent)

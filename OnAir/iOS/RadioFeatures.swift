@@ -1,5 +1,6 @@
 import SwiftUI
 import WidgetKit
+@preconcurrency import MediaPlayer
 
 struct ConnectionBadge: View {
     let station: Station
@@ -222,7 +223,12 @@ struct NowPlayingSongRow: View {
                 .buttonStyle(.plain)
                 .accessibilityLabel(current.map { "지금 나오는 곡, \($0.title), \($0.artist). 선곡표 열기" } ?? "선곡표 열기")
             }
-            .task(id: station.catalogKey) { await songs.refresh(station) }
+            .task(id: station.catalogKey) {
+                await songs.refresh(station)
+                #if DEBUG
+                if ProcessInfo.processInfo.arguments.contains("-showSongs") || ProcessInfo.processInfo.arguments.contains("-showPlaylistBuilder") { showList = true }
+                #endif
+            }
             .sheet(isPresented: $showList) { SongListSheet(station: station).presentationDetents([.medium, .large]) }
         }
     }
@@ -231,6 +237,9 @@ struct NowPlayingSongRow: View {
 struct SongListSheet: View {
     let station: Station
     @Environment(\.dismiss) private var dismiss
+    @State private var showPlaylist = false
+    @State private var opening: String?
+    @Environment(\.openURL) private var openURL
     private var songs: NowPlayingSongs { .shared }
     private static let clock: DateFormatter = {
         let f = DateFormatter(); f.locale = Locale(identifier: "ko_KR"); f.timeZone = TimeZone(identifier: "Asia/Seoul"); f.dateFormat = "a h:mm"; return f
@@ -243,6 +252,7 @@ struct SongListSheet: View {
                     let current = board.current()
                     Section {
                         ForEach(board.songs) { song in
+                            Button { open(song) } label: {
                             HStack(spacing: 12) {
                                 AsyncImage(url: song.albumImage) { image in image.resizable().scaledToFill() } placeholder: {
                                     Image(systemName: "music.note").foregroundStyle(.secondary).frame(maxWidth: .infinity, maxHeight: .infinity).background(.quaternary)
@@ -255,13 +265,19 @@ struct SongListSheet: View {
                                 Spacer(minLength: 8)
                                 if song == current { Text("지금").font(.caption.weight(.bold)).foregroundStyle(LiquidRadioTheme.accent) }
                                 else if let played = song.playedAt { Text(Self.clock.string(from: played)).font(.caption).monospacedDigit().foregroundStyle(.secondary) }
+                                if opening == song.id { ProgressView().controlSize(.small) }
+                                else { Image(systemName: "arrow.up.forward.app").font(.footnote).foregroundStyle(.tertiary) }
                             }
+                            .contentShape(.rect)
+                            }
+                            .buttonStyle(.plain)
                             .accessibilityElement(children: .combine)
+                            .accessibilityHint("Apple Music에서 이 곡을 찾아요")
                         }
                     } header: {
                         Text(board.program.map { "\($0) · 오늘 선곡" } ?? "오늘 선곡")
                     } footer: {
-                        Text("방송사 공개 선곡 정보를 표시합니다. 실제 방송과 조금 다를 수 있어요.")
+                        Text("곡을 누르면 Apple Music에서 찾아요. 방송사 공개 선곡 정보라 실제 방송과 조금 다를 수 있어요.")
                     }
                 } else if songs.loading.contains(station.catalogKey) || board == nil {
                     HStack { Spacer(); ProgressView(); Spacer() }.listRowBackground(Color.clear)
@@ -271,9 +287,258 @@ struct SongListSheet: View {
             }
             .navigationTitle(station.name + " 선곡표")
             .navigationBarTitleDisplayMode(.inline)
-            .toolbar { ToolbarItem(placement: .confirmationAction) { Button("닫기") { dismiss() } } }
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) { Button("닫기") { dismiss() } }
+                if let board, !board.songs.isEmpty {
+                    ToolbarItem(placement: .topBarLeading) {
+                        Button { showPlaylist = true } label: { Label("플레이리스트로 만들기", systemImage: "text.badge.plus") }
+                    }
+                }
+            }
+            .sheet(isPresented: $showPlaylist) {
+                if let board { PlaylistBuilderSheet(station: station, board: board) }
+            }
             .refreshable { await songs.refresh(station, force: true) }
-            .task { await songs.refresh(station) }
+            .task {
+                await songs.refresh(station)
+                #if DEBUG
+                if ProcessInfo.processInfo.arguments.contains("-showPlaylistBuilder") { showPlaylist = true }
+                #endif
+            }
+        }
+    }
+}
+
+// MARK: - Apple Music 연결 · 플레이리스트
+
+extension SongListSheet {
+    /// 곡을 먼저 Apple Music 카탈로그에서 찾아 그 곡 페이지로 바로 엽니다. 못 찾으면 검색으로 엽니다.
+    fileprivate func open(_ song: RadioSong) {
+        guard opening == nil else { return }
+        opening = song.id
+        Task {
+            let match = await SongMatcher.match(song)
+            opening = nil
+            openURL(match.confident ? (match.songURL ?? AppleMusicLink.search(song)) : AppleMusicLink.search(song))
+        }
+    }
+}
+
+enum AppleMusicLink {
+    /// Apple Music 앱의 검색 결과로 엽니다(설치되어 있으면 앱, 아니면 웹).
+    static func search(_ song: RadioSong) -> URL {
+        // "(Feat. …)", "(Inst.)" 같은 꼬리표는 검색을 방해해서 뗍니다.
+        let title = song.title.components(separatedBy: CharacterSet(charactersIn: "(（[")).first?.trimmingCharacters(in: .whitespaces) ?? song.title
+        var parts = URLComponents(string: "https://music.apple.com/kr/search")!
+        parts.queryItems = [.init(name: "term", value: [title.isEmpty ? song.title : title, song.artist].filter { !$0.isEmpty }.joined(separator: " "))]
+        return parts.url!
+    }
+}
+
+struct MusicMatch: Identifiable, Sendable {
+    let song: RadioSong
+    var trackID: String?
+    var foundTitle: String?
+    var foundArtist: String?
+    var artwork: URL?
+    var url: URL?
+    var confident = false
+    var id: String { song.id }
+    /// 미국 스토어에서 찾은 곡 번호는 한국 스토어에서도 같아서, 한국 Apple Music 곡 페이지로 엽니다.
+    var songURL: URL? { trackID.flatMap { URL(string: "https://music.apple.com/kr/song/\($0)") } }
+}
+
+enum SongMatcher {
+    private struct Response: Decodable {
+        struct Item: Decodable { let trackId: Int?; let trackName: String?; let artistName: String?; let artworkUrl100: String?; let trackViewUrl: String? }
+        let results: [Item]
+    }
+    static func normalize(_ text: String) -> String {
+        let base = text.lowercased().components(separatedBy: CharacterSet(charactersIn: "(（[")).first ?? text
+        return base.filter { $0.isLetter || $0.isNumber }
+    }
+    /// Apple 공개 검색 API(키 없음)로 곡을 찾습니다. 한국 스토어는 곡 검색 결과를 주지 않아 미국 스토어를 씁니다.
+    /// 제목과 가수가 모두 맞을 때만 '정확'으로 표시합니다.
+    static func match(_ song: RadioSong) async -> MusicMatch {
+        var result = MusicMatch(song: song)
+        var parts = URLComponents(string: "https://itunes.apple.com/search")!
+        parts.queryItems = [.init(name: "term", value: "\(song.artist) \(song.title)"), .init(name: "country", value: "US"), .init(name: "entity", value: "song"), .init(name: "limit", value: "8")]
+        guard let url = parts.url, let (data, response) = try? await URLSession.shared.data(from: url),
+              (response as? HTTPURLResponse)?.statusCode == 200,
+              let items = try? JSONDecoder().decode(Response.self, from: data).results, !items.isEmpty else { return result }
+        let title = normalize(song.title), artist = normalize(song.artist)
+        func titleMatches(_ item: Response.Item) -> Bool {
+            let found = normalize(item.trackName ?? "")
+            return !title.isEmpty && !found.isEmpty && (found == title || (min(found.count, title.count) >= 3 && (found.hasPrefix(title) || title.hasPrefix(found))))
+        }
+        func artistMatches(_ item: Response.Item) -> Bool {
+            let found = normalize(item.artistName ?? "")
+            return !artist.isEmpty && !found.isEmpty && (found.contains(artist) || artist.contains(found))
+        }
+        // Apple Music은 한국 가수 이름을 영문으로 적는 경우가 많습니다(박혜경 → Park Hye Kyung).
+        // 가수 이름으로 함께 검색했으므로, 제목이 같고 표기 문자만 다르면 같은 가수로 봅니다.
+        func hasHangul(_ text: String) -> Bool { text.unicodeScalars.contains { (0xAC00...0xD7A3).contains($0.value) } }
+        func artistCompatible(_ item: Response.Item) -> Bool {
+            artistMatches(item) || (hasHangul(song.artist) && !hasHangul(item.artistName ?? "") && normalize(item.trackName ?? "") == title)
+        }
+        let upper = song.title.uppercased()
+        let instrumental = ["(INST", "(MR", "INSTRUMENTAL", "(BGM"].contains { upper.contains($0) }
+        let best = items.first { titleMatches($0) && artistMatches($0) } ?? items.first { titleMatches($0) && artistCompatible($0) } ?? items.first { titleMatches($0) } ?? items.first!
+        result.trackID = best.trackId.map(String.init)
+        result.foundTitle = best.trackName
+        result.foundArtist = best.artistName
+        result.artwork = best.artworkUrl100.flatMap(URL.init(string:))
+        result.url = best.trackViewUrl.flatMap(URL.init(string:))
+        result.confident = !instrumental && titleMatches(best) && artistCompatible(best)
+        return result
+    }
+}
+
+enum AppleMusicPlaylist {
+    enum Failure: LocalizedError {
+        case denied, creation
+        var errorDescription: String? {
+            switch self {
+            case .denied: "Apple Music 접근이 허용되지 않았어요. 설정 → 온에어 → 미디어 및 Apple Music을 켜 주세요."
+            case .creation: "플레이리스트를 만들지 못했어요. Apple Music 구독과 iCloud 음악 보관함이 켜져 있는지 확인해 주세요."
+            }
+        }
+    }
+    /// Apple Music 보관함에 플레이리스트를 만들고 곡을 담습니다. 담은 곡 수를 돌려줍니다.
+    @MainActor static func create(name: String, productIDs: [String]) async throws -> Int {
+        let status: MPMediaLibraryAuthorizationStatus = await withCheckedContinuation { continuation in
+            MPMediaLibrary.requestAuthorization { continuation.resume(returning: $0) }
+        }
+        guard status == .authorized else { throw Failure.denied }
+        let metadata = MPMediaPlaylistCreationMetadata(name: name)
+        metadata.descriptionText = "온에어 라디오에서 들은 곡"
+        nonisolated(unsafe) var created: MPMediaPlaylist?
+        created = try? await withCheckedThrowingContinuation { (continuation: CheckedContinuation<MPMediaPlaylist, Error>) in
+            MPMediaLibrary.default().getPlaylist(with: UUID(), creationMetadata: metadata) { playlist, error in
+                if let playlist { continuation.resume(returning: playlist) } else { continuation.resume(throwing: error ?? Failure.creation) }
+            }
+        }
+        guard let playlist = created else { throw Failure.creation }
+        var added = 0
+        for id in productIDs {
+            let ok: Bool = await withCheckedContinuation { continuation in
+                playlist.addItem(withProductID: id) { error in continuation.resume(returning: error == nil) }
+            }
+            if ok { added += 1 }
+        }
+        return added
+    }
+}
+
+struct PlaylistBuilderSheet: View {
+    let station: Station
+    let board: SongBoard
+    @Environment(\.dismiss) private var dismiss
+    @Environment(\.openURL) private var openURL
+    @State private var matches: [MusicMatch] = []
+    @State private var selected: Set<String> = []
+    @State private var matching = true
+    @State private var saving = false
+    @State private var name = ""
+    @State private var result: String?
+    @State private var failure: String?
+
+    var body: some View {
+        NavigationStack {
+            List {
+                Section {
+                    TextField("플레이리스트 이름", text: $name)
+                } footer: {
+                    Text("Apple Music 구독이 필요해요. '정확'으로 찾은 곡만 미리 골라 두었어요. '확인 필요'는 눌러서 맞는지 본 뒤 담으세요.")
+                }
+                Section {
+                    if matching && matches.count < board.songs.count {
+                        HStack(spacing: 10) { ProgressView(); Text("Apple Music에서 찾는 중 \(matches.count)/\(board.songs.count)").foregroundStyle(.secondary) }
+                    }
+                    ForEach(matches) { match in row(match) }
+                } header: {
+                    Text("\(selected.count)곡 선택")
+                }
+            }
+            .navigationTitle("플레이리스트 만들기")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) { Button("취소") { dismiss() } }
+                ToolbarItem(placement: .confirmationAction) {
+                    Button { Task { await save() } } label: { if saving { ProgressView() } else { Text("만들기").bold() } }
+                        .disabled(selected.isEmpty || saving || name.trimmingCharacters(in: .whitespaces).isEmpty)
+                }
+            }
+            .alert("플레이리스트를 만들었어요", isPresented: Binding(get: { result != nil }, set: { if !$0 { result = nil } })) {
+                Button("Apple Music 열기") { openURL(URL(string: "music://")!); dismiss() }
+                Button("확인") { dismiss() }
+            } message: { Text(result ?? "") }
+            .alert("만들지 못했어요", isPresented: Binding(get: { failure != nil }, set: { if !$0 { failure = nil } })) {
+                Button("확인") { failure = nil }
+            } message: { Text(failure ?? "") }
+            .task {
+                guard matches.isEmpty else { return }
+                name = "온에어 · \(station.name) · " + Date.now.formatted(.dateTime.month().day().locale(Locale(identifier: "ko_KR")))
+                // 공개 API 이용 한도를 지키려고 한 곡씩, 최대 25곡을 찾습니다(오래된 곡부터).
+                for song in board.songs.prefix(25).reversed() {
+                    let match = await SongMatcher.match(song)
+                    matches.append(match)
+                    if match.confident, let id = match.trackID { selected.insert(id) }
+                    try? await Task.sleep(for: .milliseconds(250))
+                }
+                matching = false
+            }
+        }
+    }
+
+    private func row(_ match: MusicMatch) -> some View {
+        let id = match.trackID
+        let isOn = id.map { selected.contains($0) } ?? false
+        return HStack(spacing: 12) {
+            Button {
+                guard let id else { return }
+                if isOn { selected.remove(id) } else { selected.insert(id) }
+            } label: {
+                Image(systemName: isOn ? "checkmark.circle.fill" : "circle").font(.title3)
+                    .foregroundStyle(isOn ? LiquidRadioTheme.accent : Color.secondary)
+                    .frame(width: 44, height: 44)
+            }
+            .buttonStyle(.plain).disabled(id == nil)
+            .accessibilityLabel(isOn ? "\(match.song.title) 빼기" : "\(match.song.title) 담기")
+            AsyncImage(url: match.artwork) { $0.resizable().scaledToFill() } placeholder: { Color.secondary.opacity(0.15) }
+                .frame(width: 44, height: 44).clipShape(.rect(cornerRadius: 8))
+            VStack(alignment: .leading, spacing: 2) {
+                Text(match.song.title).font(.subheadline.weight(.semibold)).lineLimit(1)
+                Text(match.song.artist).font(.caption).foregroundStyle(.secondary).lineLimit(1)
+                if let title = match.foundTitle {
+                    HStack(spacing: 4) {
+                        Text(match.confident ? "정확" : "확인 필요")
+                            .font(.caption2.weight(.bold))
+                            .foregroundStyle(match.confident ? LiquidRadioTheme.accent : .orange)
+                        Text("→ \(title) · \(match.foundArtist ?? "")").font(.caption2).foregroundStyle(.secondary).lineLimit(1)
+                    }
+                } else {
+                    Text("Apple Music에서 찾지 못했어요").font(.caption2).foregroundStyle(.secondary)
+                }
+            }
+            Spacer(minLength: 0)
+            if let url = match.songURL ?? match.url {
+                Button { openURL(url) } label: { Image(systemName: "arrow.up.forward.app").frame(width: 44, height: 44) }
+                    .buttonStyle(.plain).foregroundStyle(.secondary)
+                    .accessibilityLabel("Apple Music에서 이 곡 보기")
+            }
+        }
+    }
+
+    private func save() async {
+        saving = true; defer { saving = false }
+        // 방송 순서대로 담습니다.
+        let ids = matches.compactMap(\.trackID).filter { selected.contains($0) }
+        do {
+            let added = try await AppleMusicPlaylist.create(name: name.trimmingCharacters(in: .whitespaces), productIDs: ids)
+            result = added == ids.count ? "\(added)곡을 '\(name)'에 담았어요." : "\(ids.count)곡 중 \(added)곡을 담았어요. 나머지는 Apple Music에 없는 곡이에요."
+        } catch {
+            failure = error.localizedDescription
         }
     }
 }
